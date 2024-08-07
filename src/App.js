@@ -2,16 +2,17 @@
 import './App.css';
 import Banner from './components/Banner';
 import Footer  from './components/Footer';
-import Header  from './components/Header';
+import Header from './components/Header';
+import { BrowserRouter, Routes,Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
       <Banner />
       <p>Hello</p>
       <Footer/>
-    </div>
+    </>
   );
 }
 
