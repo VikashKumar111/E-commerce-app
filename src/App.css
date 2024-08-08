@@ -20,8 +20,11 @@ a {
 
 /* Header Starts */
 .header-top-strip {
-  border-bottom: var(--color-3b4149);
+  border-bottom: 1px solid var(--color-3b4149);
   background-color: var(--color-131921);
 }
 
+.header-upper {
+  background-color: var(--color-131921);
+}
 /* Header Ends Here */

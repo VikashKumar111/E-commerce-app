@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
+import { BsSearch } from "react-icons/bs";
 
 const Header = () => {
   return (
@@ -8,11 +9,16 @@ const Header = () => {
         <div className="container-xxl">
           <div className="row">
             <div className="col-6">
-              <p className="text-white mb-0">Free Shipping over $100 $ Free Returns</p>
+              <p className="text-white mb-0">
+                Free Shipping over $100 $ Free Returns
+              </p>
             </div>
             <div className="col-6">
               <p className="text-end text-white mb-0">
-                Contact: <a className="text-white" href="tel: +91 9999999999"> +91 9999999999</a>
+                Contact:
+                <a className="text-white" href="tel: +91 9999999999">
+                  +91 9999999999
+                </a>
               </p>
             </div>
           </div>
@@ -24,8 +30,21 @@ const Header = () => {
             <div className="col-2">
               <Link className="text-white">BME</Link>
             </div>
+            <div className="col-5">
+              <div className="input-group mb-3">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Search Product Here..."
+                  aria-label="Search Product Here..."
+                  aria-describedby="basic-addon2"
+                />
+                <span className="input-group-text" id="basic-addon2">
+                  <BsSearch/>
+                </span>
+              </div>
+            </div>
             <div className="col-5"></div>
-             <div className="col-5"></div>
           </div>
         </div>
       </header>
