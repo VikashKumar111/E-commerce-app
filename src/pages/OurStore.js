@@ -1,8 +1,11 @@
 import React from "react";
+import BreadCrumb from "../components/BreadCrumb";
 
 const OurStore = () => {
     return (
-        <h1>Our Store</h1>
+        <>
+            <BreadCrumb title="our store" />
+        </>
     )
 };
 
