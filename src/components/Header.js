@@ -31,7 +31,7 @@ const Header = () => {
               <Link className="text-white">BME</Link>
             </div>
             <div className="col-5">
-              <div className="input-group mb-3">
+              <div className="input-group">
                 <input
                   type="text"
                   className="form-control"
@@ -45,6 +45,14 @@ const Header = () => {
               </div>
             </div>
             <div className="col-5"></div>
+          </div>
+        </div>
+        <div className="col-5">
+          <div className="header-upper-links d-flex align-items-center justify-content-between">
+            <div><Link></Link></div>
+            <div><Link></Link></div>
+            <div><Link></Link></div>
+            <div><Link></Link></div>
           </div>
         </div>
       </header>
