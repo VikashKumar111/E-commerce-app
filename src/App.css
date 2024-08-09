@@ -23,6 +23,15 @@ a {
   box-shadow: none;
   border-color: inherit;
 }
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-15 {
+  gap: 15px;
+}
+
 /* Header Starts */
 .header-top-strip {
   border-bottom: 1px solid var(--color-3b4149);
@@ -35,5 +44,10 @@ a {
 
 .header-upper .input-group-text {
   background-color: var(--color-febd69);
+}
+
+.header-upper .header-upper-links img {
+  width: 35px;
+  height: 35px;
 }
 /* Header Ends Here */

@@ -71,11 +71,12 @@ const Header = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link>
-                    <img src="images/compare.svg" alt="" />
-                    <p>
-                      Compare <br /> Products
-                    </p>
+                  <Link className="d-flex align-items-center gap-10 text-white">
+                    <img src="images/cart.svg" alt="cart" />
+                    <div className="d-flex flex-column">
+                      <span className="badge bg-white text-dark">0</span>
+                      <p>$ 500</p>
+                    </div>
                   </Link>
                 </div>
               </div>
