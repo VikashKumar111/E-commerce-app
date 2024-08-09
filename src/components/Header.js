@@ -26,7 +26,7 @@ const Header = () => {
       </header>
       <header className="header-upper py-3">
         <div className="container-xxl">
-          <div className="row">
+          <div className="row align-items-center">
             <div className="col-2">
               <Link className="text-white">BME</Link>
             </div>
@@ -39,20 +39,47 @@ const Header = () => {
                   aria-label="Search Product Here..."
                   aria-describedby="basic-addon2"
                 />
-                <span className="input-group-text" id="basic-addon2">
-                  <BsSearch/>
+                <span className="input-group-text p-3" id="basic-addon2">
+                  <BsSearch className="fs-6" />
                 </span>
               </div>
             </div>
-            <div className="col-5"></div>
-          </div>
-        </div>
-        <div className="col-5">
-          <div className="header-upper-links d-flex align-items-center justify-content-between">
-            <div><Link></Link></div>
-            <div><Link></Link></div>
-            <div><Link></Link></div>
-            <div><Link></Link></div>
+            <div className="col-5">
+              <div className="header-upper-links d-flex align-items-center justify-content-between">
+                <div>
+                  <Link>
+                    <img src="images/compare.svg" alt="compare" />
+                    <p>
+                      Compare <br /> Products
+                    </p>
+                  </Link>
+                </div>
+                <div>
+                  <Link>
+                    <img src="images/wishlist.svg" alt="wishlist" />
+                    <p>
+                      Favourite <br /> Wishlist
+                    </p>
+                  </Link>
+                </div>
+                <div>
+                  <Link>
+                    <img src="images/user.svg" alt="user" />
+                    <p>
+                      Login <br /> My Account
+                    </p>
+                  </Link>
+                </div>
+                <div>
+                  <Link>
+                    <img src="images/compare.svg" alt="" />
+                    <p>
+                      Compare <br /> Products
+                    </p>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </header>

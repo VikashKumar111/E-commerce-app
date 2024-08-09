@@ -19,6 +19,10 @@ a {
   display: inline-block;
 }
 
+.form-control:focus {
+  box-shadow: none;
+  border-color: inherit;
+}
 /* Header Starts */
 .header-top-strip {
   border-bottom: 1px solid var(--color-3b4149);
