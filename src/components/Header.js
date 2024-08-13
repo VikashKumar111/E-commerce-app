@@ -106,19 +106,19 @@ const Header = () => {
                       aria-labelledby="dropdownMenuButton1"
                     >
                       <li>
-                        <a  className="dropdown-item" href="#">
+                        <Link  className="dropdown-item text-white" to="">
                           Action
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a  className="dropdown-item" href="#">
+                        <Link  className="dropdown-item text-white" to="">
                           Another action
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a  className="dropdown-item" href="#">
+                        <Link  className="dropdown-item text-white" to="">
                           Something else here
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
