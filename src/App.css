@@ -290,5 +290,20 @@ footer .input-group-text {
   border-radius: 10px;
 }
 
+.product-card .product-details h6 {
+  font-size: 13px;
+  color: var(--color-bf4800);
+}
+
+.product-card .product-details h5 {
+  font-size: 15px;
+  color: var(--color-1c1c1b);
+}
+
+.product-card .product-details p.price {
+  font-size: 16px;
+  color: var(--color-1c1c1b);
+}
+
 /* Featured Collection Ends Here */
 /* Home Page Ends Here */
