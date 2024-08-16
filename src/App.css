@@ -264,5 +264,20 @@ footer .input-group-text {
 .blog-content {
   padding: 10px;
 }
+
+.blog-content p.date {
+  font-size: 13px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: var(--color-777777);
+  padding: 0;
+}
+
+.blog-content h5 {
+  font-size: 18px;
+  color: var(--color-131921);
+}
 /* Blog Section Ends Here */
 /* Home Page Ends Here */
