@@ -288,6 +288,34 @@ footer .input-group-text {
   padding: 15px;
   background-color: white;
   border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.product-card .product-image {
+  height: 270px;
+}
+
+.product-card .product-image img {
+  object-fit: contain;
+}
+
+.product-card:hover .product-image > img:nth-child(1) {
+  display: none;
+}
+.product-card:hover .product-image > img:last-child {
+  display: block;
+  padding-top: 50px;
+  padding-bottom: 36px;
+  padding-left: 25px;
+}
+
+.product-card .product-image > img:last-child {
+  display: none;
+}
+
+.product-card:hover .action-bar {
+  right: 15px;
 }
 
 .product-card .product-details h6 {
@@ -305,5 +333,15 @@ footer .input-group-text {
   color: var(--color-1c1c1b);
 }
 
+.action-bar {
+  top: 10%;
+  right: -23px;
+  transition: 0.3s;
+}
+
+.wishlist-icon {
+  top: 2%;
+  right: 15px;
+}
 /* Featured Collection Ends Here */
 /* Home Page Ends Here */
