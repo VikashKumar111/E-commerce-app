@@ -214,7 +214,33 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="marque-wrapper py-5">
+      <section className="featured-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row">
+            <div className="col-12">
+              <h3 className="section-heading">Featured Collection</h3>
+            </div>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </div>
+        </div>
+      </section>
+            <section className="special-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row">
+            <div className="col-12">
+              <h3 className="section-heading">Special Products</h3>
+            </div>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </div>
+        </div>
+      </section>
+      <section className="marque-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
@@ -250,21 +276,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <section className="blog-wrapper py-5 home-wrapper-2">
-        <div className="container-xxl">
-          <div className="row">
-            <div className="col-12">
-              <h3 className="section-heading">Featured Collection</h3>
-            </div>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-          </div>
-        </div>
-      </section>
-
       <section className="blog-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
           <div className="row">
