@@ -234,7 +234,7 @@ const Home = () => {
             <div className="col-12">
               <h3 className="section-heading">Special Products</h3>
             </div>
-            <div>
+            <div className="row">
               <SpecialProduct />
               <SpecialProduct />
                <SpecialProduct />

@@ -345,6 +345,10 @@ footer .input-group-text {
 /* Featured Collection Ends Here */
 
 /* Special Products */
-
+.special-product-card {
+  padding: 20px 10px;
+  border-radius: 10px;
+  background-color: white;
+}
 /* Special Products Ends Here */
 /* Home Page Ends Here */
