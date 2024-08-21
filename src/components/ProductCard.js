@@ -42,6 +42,11 @@ const ProductCard = (props) => {
               edit={false}
               activeColor="#ffd700"
             />
+            <p className={`description ${grid === 12 ? "d-block " : "d-none"}`}>
+              Discover sleek, modern design with our high-quality watch. Perfect
+              for [specific use], this durable, stylish item offers exceptional
+              performance and adds a touch of elegance to any setting.
+            </p>
             <p className="price">$100.00</p>
           </div>
           <div className="action-bar position-absolute d-flex flex-column gap-15">
@@ -58,7 +63,7 @@ const ProductCard = (props) => {
         </div>
       </div>
       <div
-        className={`${location.pathname == "/store" ? `col-${grid}` : "col-3"}`}
+        className={`${location.pathname == "/store" ? `gr-${grid}` : "col-3"}`}
       >
         <div className="product-card position-relative">
           <div className="wishlist-icon position-absolute">
@@ -90,6 +95,11 @@ const ProductCard = (props) => {
               edit={false}
               activeColor="#ffd700"
             />
+            <p className={`description ${grid === 12 ? "d-block " : "d-none"}`}>
+              Discover sleek, modern design with our high-quality watch. Perfect
+              for [specific use], this durable, stylish item offers exceptional
+              performance and adds a touch of elegance to any setting.
+            </p>
             <p className="price">$100.00</p>
           </div>
           <div className="action-bar position-absolute d-flex flex-column gap-15">
