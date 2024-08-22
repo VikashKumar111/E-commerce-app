@@ -36,7 +36,10 @@ const Contact = () => {
                       <input type="tel" className="form-control" placeholder="Mobile Number"/>
                     </div>
                      <div>
-                      <textarea name="" id="" className="w-100 form-control" cols="30" rows="10"></textarea>
+                      <textarea name="" id="" className="w-100 form-control" placeholder="Comment" cols="30" rows="4"></textarea>
+                    </div>
+                    <div>
+                      <button className="button border-0">Submit</button>
                     </div>
                   </form>
                 </div>
