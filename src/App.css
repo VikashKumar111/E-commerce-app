@@ -541,4 +541,25 @@ footer .input-group-text {
 .gr-12 .action-bar {
   top: 17%;
 }
-/* Our Section Ends Here */
+/* Our Store Section Ends Here */
+
+/* Contact Page */
+
+.contact-inner-wrapper {
+  padding: 20px;
+  border-radius: 15px;
+  background-color: white;
+  gap: 15px;
+}
+
+.contact-inner-wrapper > div {
+  width: 48%;
+}
+
+.contact-title {
+  font-size: 26px;
+  line-height: 35px;
+  font-weight: 500;
+  text-align: left;
+}
+/* Contact Page Ends Here */
