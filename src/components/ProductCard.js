@@ -97,7 +97,7 @@ const ProductCard = (props) => {
             />
             <p className={`description ${grid === 12 ? "d-block " : "d-none"}`}>
               Discover sleek, modern design with our high-quality watch. Perfect
-              for [specific use], this durable, stylish item offers exceptional
+              for specific use, this durable, stylish item offers exceptional
               performance and adds a touch of elegance to any setting.
             </p>
             <p className="price">$100.00</p>
