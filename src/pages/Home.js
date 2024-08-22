@@ -233,8 +233,54 @@ const Home = () => {
           <div className="row">
             <div className="col-3">
               <div className="famous-card position-relative">
-                <img src="images/watch.jpg" alt="famous" />
+                <img
+                  src="images/watch.jpg"
+                  className="img-fluid"
+                  alt="famous"
+                />
                 <div className="famous-content position-absolute">
+                  <h5>Big Screen</h5>
+                  <h6>Smart Watch Series 7</h6>
+                  <p>From $500 to $5000</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-3">
+              <div className="famous-card position-relative">
+                <img
+                  src="images/watch.jpg"
+                  className="img-fluid"
+                  alt="famous"
+                />
+                <div className="famous-content position-absolute ">
+                  <h5>Big Screen</h5>
+                  <h6>Smart Watch Series 7</h6>
+                  <p>From $500 to $5000</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-3">
+              <div className="famous-card position-relative">
+                <img
+                  src="images/watch.jpg"
+                  className="img-fluid"
+                  alt="famous"
+                />
+                <div className="famous-content position-absolute ">
+                  <h5>Big Screen</h5>
+                  <h6>Smart Watch Series 7</h6>
+                  <p>From $500 to $5000</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-3">
+              <div className="famous-card position-relative">
+                <img
+                  src="images/watch.jpg"
+                  className="img-fluid"
+                  alt="famous"
+                />
+                <div className="famous-content position-absolute ">
                   <h5>Big Screen</h5>
                   <h6>Smart Watch Series 7</h6>
                   <p>From $500 to $5000</p>
