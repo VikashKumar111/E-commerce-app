@@ -15,10 +15,13 @@ const Blog = () => {
                 <h3 className="filter-title">Find By Categories</h3>
                 <div>
                   <ul className="ps-0">
-                    <li>Watch</li>
-                    <li>Tv</li>
-                    <li>Camera</li>
-                    <li>Laptop</li>
+                    <li>Product Reviews & Comparisons</li>
+                    <li>Buying Guides</li>
+                    <li>Customer Stories & Testimonials</li>
+                    <li>Tech & Innovation</li>
+                    <li>Events & Webinars</li>
+                    <li>Health & Wellness</li>
+                    <li>FAQs & Troubleshooting</li>
                   </ul>
                 </div>
               </div>
