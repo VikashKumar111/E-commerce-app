@@ -232,7 +232,14 @@ const Home = () => {
         <div className="container-xxl">
           <div className="row">
             <div className="col-3">
-              
+              <div className="famous-card position-relative">
+                <img src="images/watch.jpg" alt="famous" />
+                <div className="famous-content position-absolute">
+                  <h5>Big Screen</h5>
+                  <h6>Smart Watch Series 7</h6>
+                  <p>From $500 to $5000</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -308,10 +315,20 @@ const Home = () => {
             <div className="col-12">
               <h3 className="section-heading">Our Latest Blogs</h3>
             </div>
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
+          </div>
+          <div className="row">
+            <div className="col-3">
+              <BlogCard />
+            </div>
+            <div className="col-3">
+              <BlogCard />
+            </div>
+            <div className="col-3">
+              <BlogCard />
+            </div>
+            <div className="col-3">
+              <BlogCard />
+            </div>
           </div>
         </div>
       </section>

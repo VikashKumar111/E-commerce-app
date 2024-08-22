@@ -361,6 +361,17 @@ footer .input-group-text {
 
 /*  Famous Section */
 
+.famous-card .famous-content {
+  top: 10%;
+  left: 10%;
+}
+
+.famous-content h5 {
+}
+.famous-content h6 {
+}
+.famous-content p {
+}
 /* Famous Section Ends Here */
 /* Home Page Ends Here */
 
