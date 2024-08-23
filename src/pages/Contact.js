@@ -76,11 +76,11 @@ const Contact = () => {
                       </li>
                       <li className="mb-3 d-flex gap-15 align-items-center">
                         <BiPhoneCall className="fs-5" />
-                        <a href="tel:+91 9999999999" className="text-dark">8888888888</a>
+                        <a href="tel:+91 9999999999">+91 8888888888</a>
                       </li>
                       <li className="mb-3 d-flex gap-15 align-items-center">
                         <AiOutlineMail className="fs-5" />
-                        <a href="mailto:bme@gmail.com" className="text-dark">bme@gmail.com</a>
+                        <a href="mailto:bme@gmail.com">bme@gmail.com</a>
                       </li>
                       <li className="mb-3 d-flex gap-15 align-items-center">
                         <BiInfoCircle className="fs-5" />
