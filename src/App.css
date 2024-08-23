@@ -569,4 +569,8 @@ footer .input-group-text {
   border-color: transparent;
   padding: 10px;
 }
+
+.contact-inner-wrapper ul {
+  list-style-type: none;
+}
 /* Contact Page Ends Here */
