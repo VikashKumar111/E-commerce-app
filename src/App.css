@@ -592,7 +592,16 @@ footer .input-group-text {
 .compare-product-card .cross {
   top: 15px;
   right: 15px;
-  width: 20px;
+  width: 25px;
+  padding: 3px;
   cursor: pointer;
 }
+
+.compare-product-details h5.title {
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 500;
+  color: var(--color-1c1c1b);
+}
+
 /* Compare Product Page Ends Here */

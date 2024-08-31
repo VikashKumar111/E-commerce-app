@@ -20,6 +20,13 @@ const CompareProduct = () => {
                 <div className="product-card-image">
                   <img src="images/watch.jpg" alt="watch" />
                 </div>
+                <div className="compare-product-details">
+                  <h5 className="title">
+                    Galaxy Infinity Pro - 6.5" Super AMOLED, 6GB RAM, 48MP
+                    Triple Camera
+                  </h5>
+                  <h6 className="price">$ 100</h6>
+                </div>
               </div>
             </div>
           </div>
