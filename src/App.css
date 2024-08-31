@@ -604,4 +604,17 @@ footer .input-group-text {
   color: var(--color-1c1c1b);
 }
 
+.compare-product-details h6.price {
+  font-size: 25px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.compare-product-card .product-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
 /* Compare Product Page Ends Here */
