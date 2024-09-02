@@ -14,7 +14,7 @@ const Login = () => {
                   <div className='col-12'>
                       <div className='auth-card'>
                           <h3 className='text-center mb-3'>Login</h3>
-                          <form action=''>
+                          <form action='' className="d-flex flex-column gap-15">
                               <div>
                                   <input type='email' name='email' placeholder='Email' className='form-control'/>
                               </div>

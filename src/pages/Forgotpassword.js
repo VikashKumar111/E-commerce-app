@@ -16,7 +16,7 @@ const Forgotpassword = () => {
                           <p className="text-center mt-2 mb-3">
                               We will send you an email to reset your password
                           </p>
-                          <form action=''>
+                          <form action='' className="d-flex flex-column gap-15">
                               <div>
                                   <input type='email' name='email' placeholder='Email' className='form-control'/>
                               </div>
