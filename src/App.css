@@ -287,7 +287,7 @@ footer .input-group-text {
   color: var(--color-777777);
 }
 
-.single-blog-card h3 {
+/* .single-blog-card h3 {
   font-size: 24px;
   line-height: 600;
   color: var(--color-1c1c1b);
@@ -296,6 +296,42 @@ footer .input-group-text {
 .single-blog-card p {
   color: var(--color-777777);
   font-size: 14px;
+} */
+
+/* .blog-wrapper {
+  padding: 32px 16px; 
+} */
+
+.single-blog-card a {
+  font-size: 15px;
+  color: var(--color-777777);
+  margin-bottom: 20px;
+}
+
+.single-blog-card {
+  background: #fff; /* White background for better readability */
+  padding: 32px; /* Padding around the content */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  margin-bottom: 32px; /* Space below the card */
+}
+
+.single-blog-card .title {
+  font-size: 28px; /* Title size */
+  font-weight: bold;
+  margin-bottom: 16px; /* Space below the title */
+}
+
+.single-blog-card img {
+  border-radius: 8px; /* Match image corners with card */
+  max-width: 100%; /* Ensure responsive image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.single-blog-card p {
+  font-size: 16px; /* Font size for the text */
+  line-height: 24px; /* Line height for readability */
+  color: #333; /* Darker text color for better contrast */
 }
 /* Blog Section Ends Here */
 
