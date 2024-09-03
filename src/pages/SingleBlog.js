@@ -11,6 +11,10 @@ const SingleBlog = () => {
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
+              <div className="single-blog-card">
+                <h3>A beautiful sunday morning renaissance</h3>
+                <img src="images/blog-1.jpg" alt="" />
+              </div>
             </div>
           </div>
         </div>
