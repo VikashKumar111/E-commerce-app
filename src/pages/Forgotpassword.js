@@ -1,7 +1,8 @@
 import React from "react";
-import BreadCrumb from "../components/BreadCrumb";
-import Meta from "../components/Meta";
+
 import { Link } from "react-router-dom";
+import Meta from "../components/Meta";
+import BreadCrumb from "../components/BreadCrumb";
 
 const Forgotpassword = () => {
   return (
@@ -25,7 +26,7 @@ const Forgotpassword = () => {
                       placeholder="Email"
                       className="form-control"
                     />
-                  </div>
+                  </div>                
                   <div>
                     <div className="mt-3 d-flex flex-column justify-content-center align-items-center gap-15">
                       <button className="button border-0 mt-1" type="submit">
