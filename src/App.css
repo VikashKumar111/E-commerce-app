@@ -303,7 +303,7 @@ footer .input-group-text {
 } */
 
 .single-blog-card a {
-  font-size: 15px;
+  font-size: 18px;
   color: var(--color-777777);
   margin-bottom: 20px;
 }
@@ -325,13 +325,14 @@ footer .input-group-text {
 .single-blog-card img {
   border-radius: 8px; /* Match image corners with card */
   max-width: 100%; /* Ensure responsive image */
-  height: auto; /* Maintain aspect ratio */
+  height: 550px; /* Maintain aspect ratio */
 }
 
 .single-blog-card p {
   font-size: 16px; /* Font size for the text */
   line-height: 24px; /* Line height for readability */
   color: #333; /* Darker text color for better contrast */
+  padding-top: 20px;
 }
 /* Blog Section Ends Here */
 

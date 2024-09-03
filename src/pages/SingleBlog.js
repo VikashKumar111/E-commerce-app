@@ -14,9 +14,9 @@ const SingleBlog = () => {
           <div className="row">
             <div className="col-12">
               <div className="single-blog-card">
-                <Link to="/blog" className="d-flex align-items-center gap-10"><HiOutlineArrowLeft/>Go back to Blogs</Link>
+                <Link to="/blog" className="d-flex align-items-center gap-10"><HiOutlineArrowLeft className="fs-4"/>Go back to Blogs</Link>
                 <h3 className="title">A beautiful sunday morning renaissance</h3>
-                <img src="images/blog-1.jpg" className="img-fluid w-100 py-4" alt="blog" />
+                <img src="/images/blog-1.jpg" className="img-fluid w-100 py-4" alt="blog" />
                 <p>
                   Discover breathtaking destinations, travel tips, and hidden
                   gems as you embark on unforgettable adventures around the
