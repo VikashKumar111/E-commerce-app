@@ -16,6 +16,7 @@ import Resetpassword from "./pages/Resetpassword";
 import SingleBlog from "./pages/SingleBlog";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import RefundPolicy from "./pages/RefundPolicy";
+import ShippingPolicy from "./pages/ShippingPolicy";
 
 function App() {
   return (
@@ -37,8 +38,8 @@ function App() {
             <Route path="reset-password" element={<Resetpassword />} />
             <Route path="privacy-policy" element={<PrivacyPolicy />} />
             <Route path="refund-policy" element={<RefundPolicy />} />
-            {/* <Route path="shipping-policy" element={<ShippingPolicy />} />
-            <Route path="terms-conditions" element={<TermsAndConditions />} /> */}
+            <Route path="shipping-policy" element={<ShippingPolicy />} />
+            {/* <Route path="terms-conditions" element={<TermsAndConditions />} /> */}
           </Route>
         </Routes>
       </BrowserRouter>
