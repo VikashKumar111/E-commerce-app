@@ -298,9 +298,9 @@ footer .input-group-text {
   font-size: 14px;
 } */
 
-/* .blog-wrapper {
-  padding: 32px 16px; 
-} */
+.blog-wrapper {
+  padding: 20px;
+}
 
 .single-blog-card a {
   font-size: 18px;
@@ -721,3 +721,12 @@ footer .input-group-text {
   color: white;
 }
 /* auth card ends here */
+
+/* Policy Pages */
+
+.policy {
+  background-color: white;
+  padding: 30px;
+}
+
+/* Policy Pages Ends Here */
