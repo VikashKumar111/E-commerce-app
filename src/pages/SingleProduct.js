@@ -2,6 +2,7 @@ import React from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 import ProductCard from "../components/ProductCard";
+import ReactStars from "react-rating-stars-component";
 
 const SingleProduct = () => {
   return (
@@ -13,6 +14,27 @@ const SingleProduct = () => {
           <div className="row">
             <div className="col-6"></div>
             <div className="col-6"></div>
+          </div>
+        </div>
+      </div>
+      <div className="review-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row">
+            <div className="col-12">
+              <div className="review-head d-flex justify-content-between align-items-end">
+                <div>
+                  <h4>Customer Reviews</h4>
+                  <ReactStars
+                    count={5}
+                    size={24}
+                    value={3}
+                    edit={false}
+                    activeColor="#ffd700"
+                  />
+                </div>
+                <div></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
