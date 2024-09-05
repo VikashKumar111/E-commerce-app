@@ -12,7 +12,7 @@ const ProductCard = (props) => {
       <div
         className={`${location.pathname == "/store" ? `gr-${grid}` : "col-3 mb-4"}`}
       >
-        <div className="product-card position-relative">
+        <Link to="product/:id" className="product-card position-relative">
           <div className="wishlist-icon position-absolute">
             <Link>
               <img src="images/wish.svg" alt="wishlist" />
@@ -60,12 +60,12 @@ const ProductCard = (props) => {
               <img src="images/add-cart.svg" alt="addcart" />
             </Link>
           </div>
-        </div>
+        </Link>
       </div>
       <div
         className={`${location.pathname == "/store" ? `gr-${grid}` : "col-3"}`}
       >
-        <div className="product-card position-relative">
+        <Link to="product/:id" className="product-card position-relative">
           <div className="wishlist-icon position-absolute">
             <Link>
               <img src="images/wish.svg" alt="wishlist" />
@@ -113,7 +113,7 @@ const ProductCard = (props) => {
               <img src="images/add-cart.svg" alt="addcart" />
             </Link>
           </div>
-        </div>
+        </Link>
       </div>
     </>
   );
