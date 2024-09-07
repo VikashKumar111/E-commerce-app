@@ -18,10 +18,11 @@ const SingleProduct = () => {
           </div>
         </div>
       </div>
-      <div className="review-wrapper py-5 home-wrapper-2">
+      <div className="review-wrapper home-wrapper-2">
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
+              <h4>Reviews</h4>
               <div className="review-inner-wrapper">
                 <div className="review-head d-flex justify-content-between align-items-end">
                   <div>
@@ -106,8 +107,9 @@ const SingleProduct = () => {
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
+              <h4>Description</h4>
               <div className="bg-white p-3">
-                <h4>Description</h4>
+                
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Integer nec odio. Praesent libero. Sed cursus ante dapibus
