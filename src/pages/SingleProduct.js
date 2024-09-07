@@ -52,7 +52,7 @@ const SingleProduct = () => {
                   <h4>Wtite a Review</h4>
                   <form action="" className="d-flex flex-column gap-15">
                     <div>
-                        <ReactStars
+                      <ReactStars
                         count={5}
                         size={24}
                         value={3}
@@ -70,10 +70,32 @@ const SingleProduct = () => {
                         rows="4"
                       ></textarea>
                     </div>
-                    <div>
-                      <button className="button border-0">Submit</button>
+                    <div className="d-flex justify-content-end">
+                      <button className="button border-0">Submit Review</button>
                     </div>
                   </form>
+                </div>
+                <div className="reviews mt-4">
+                  <div className="review">
+                    <div className="d-flex align-items-center gap-10">
+                      <h6 className="mb-0">Navdeep</h6>
+                      <ReactStars
+                        count={5}
+                        size={24}
+                        value={3}
+                        edit={false}
+                        activeColor="#ffd700"
+                      />
+                    </div>
+                    <p className="mt-0">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Integer nec odio. Praesent libero. Sed cursus ante dapibus
+                      diam. Sed nisi. Nulla quis sem at nibh elementum
+                      imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec
+                      tellus sed augue semper porta. Mauris massa. Vestibulum
+                      lacinia arcu eget nulla.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
