@@ -3,8 +3,15 @@ import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 import ProductCard from "../components/ProductCard";
 import ReactStars from "react-rating-stars-component";
+import ReactImageZoom from "react-image-zoom";
 
 const SingleProduct = () => {
+  const props = {
+    width: 100,
+    height: 100,
+    zoomWidth: 500,
+    img: "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0Y2h8ZW58MHx8MHx8fDA%3D",
+  };
   const [orderedProduct, setOrderedProduct] = useState(true);
   return (
     <>
@@ -13,8 +20,62 @@ const SingleProduct = () => {
       <div className="main-product-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
           <div className="row">
-            <div className="col-6"></div>
-            <div className="col-6"></div>
+            <div className="col-6">
+              <div className="main-product-image">
+                <div className="prod-image">
+                  <ReactImageZoom {...props} />
+                </div>
+              </div>
+              <div className="other-product-images d-flex flex-wrap gap-15">
+                <div>
+                  <img
+                    className="img-fluid"
+                    src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0Y2h8ZW58MHx8MHx8fDA%3D"
+                  />
+                </div>
+                <div>
+                  <img
+                    className="img-fluid"
+                    src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0Y2h8ZW58MHx8MHx8fDA%3D"
+                  />
+                </div>
+                <div>
+                  <img
+                    className="img-fluid"
+                    src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0Y2h8ZW58MHx8MHx8fDA%3D"
+                  />
+                </div>
+                <div>
+                  <img
+                    className="img-fluid"
+                    src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0Y2h8ZW58MHx8MHx8fDA%3D"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="col-6">
+              <div className="main-product-details">
+                <div className="border-bottom">
+                  <h3 className="title">
+                    Kids headphones bulk 10 pack multi colored for students
+                  </h3>
+                </div>
+              </div>
+              <div className="border-bottom">
+                <p>$ 100</p>
+                <div className="d-flex align-items-center gap-10">
+                  <ReactStars
+                    count={5}
+                    size={24}
+                    value={3}
+                    edit={false}
+                    activeColor="#ffd700"
+                  />
+                  <p className="mb-0">Based on 2 Reviews</p>
+                </div>
+                <a href="">Write a Review</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -109,7 +170,6 @@ const SingleProduct = () => {
             <div className="col-12">
               <h4>Description</h4>
               <div className="bg-white p-3">
-                
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Integer nec odio. Praesent libero. Sed cursus ante dapibus
