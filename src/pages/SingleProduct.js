@@ -60,26 +60,31 @@ const SingleProduct = () => {
                     Kids headphones bulk 10 pack multi colored for students
                   </h3>
                 </div>
-              </div>
-              <div className="border-bottom">
-                <p>$ 100</p>
-                <div className="d-flex align-items-center gap-10">
-                  <ReactStars
-                    count={5}
-                    size={24}
-                    value={3}
-                    edit={false}
-                    activeColor="#ffd700"
-                  />
-                  <p className="mb-0">Based on 2 Reviews</p>
+                <div className="border-bottom py-3">
+                  <p>$ 100</p>
+                  <div className="d-flex align-items-center gap-10">
+                    <ReactStars
+                      count={5}
+                      size={24}
+                      value={3}
+                      edit={false}
+                      activeColor="#ffd700"
+                    />
+                    <p className="mb-0 t-review">2 Reviews</p>
+                  </div>
+                  <a href="#review" className="review-btn">Write a Review</a>
                 </div>
-                <a href="">Write a Review</a>
+                <div className="border-bottom py-3">
+                  <div className="d-flex gap-10 align-items-center">
+                    <h3 className="product-heading">ABC :</h3> <p className="product-data">GFF</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="review-wrapper home-wrapper-2">
+      <div id="review" className="review-wrapper home-wrapper-2">
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
@@ -110,7 +115,7 @@ const SingleProduct = () => {
                     </div>
                   )}
                 </div>
-                <div className="review-form py-4">
+                <div  className="review-form py-4">
                   <h4>Wtite a Review</h4>
                   <form action="" className="d-flex flex-column gap-15">
                     <div>
