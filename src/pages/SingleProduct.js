@@ -4,12 +4,15 @@ import Meta from "../components/Meta";
 import ProductCard from "../components/ProductCard";
 import ReactStars from "react-rating-stars-component";
 import ReactImageZoom from "react-image-zoom";
+import Color from "../components/Color";
+import { TbGitCompare } from "react-icons/tb";
+import { AiOutlineHeart } from "react-icons/ai";
 
 const SingleProduct = () => {
   const props = {
-    width: 100,
-    height: 100,
-    zoomWidth: 500,
+    width: 400,
+    height: 600,
+    zoomWidth: 600,
     img: "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0Y2h8ZW58MHx8MHx8fDA%3D",
   };
   const [orderedProduct, setOrderedProduct] = useState(true);
@@ -97,9 +100,71 @@ const SingleProduct = () => {
                     <h3 className="product-heading">Availabilty :</h3>
                     <p className="product-data">In Stock</p>
                   </div>
+                  <div className="d-flex gap-10 flex-column mt-2 mb-3">
+                    <h3 className="product-heading">Size :</h3>
+                    <div className="d-flex flex-wrap gap-15">
+                      <span className="badge border border-1 bg-white text-dark border-secondary ">
+                        S
+                      </span>
+                      <span className="badge border border-1 bg-white text-dark border-secondary ">
+                        M
+                      </span>
+                      <span className="badge border border-1 bg-white text-dark border-secondary ">
+                        XL
+                      </span>
+                      <span className="badge border border-1 bg-white text-dark border-secondary ">
+                        XXL
+                      </span>
+                    </div>
+                  </div>
+                  <div className="d-flex gap-10 flex-column mt-2 mb-3">
+                    <h3 className="product-heading">Color :</h3>
+                    <Color />
+                  </div>
+                  <div className="d-flex align-items-center gap-15 flex-row mt-2 mb-3">
+                    <h3 className="product-heading">Quantity :</h3>
+                    <div className="">
+                      <input
+                        type="number"
+                        name=""
+                        min={1}
+                        max={10}
+                        className="form-control"
+                        style={{ width: "70px" }}
+                        id=""
+                      />
+                    </div>
+                    <div className="d-flex align-items-center gap-30 ms-5">
+                      <button type="submit" className="button border-0">
+                        Add To Cart
+                      </button>
+                      <button className="button signup">Buy It Now</button>
+                    </div>
+                  </div>
+                  <div className="d-flex align-items-center gap-15">
+                    <div>
+                      <a href="">
+                        <TbGitCompare className="fs-5 me-2" /> Add to Compare
+                      </a>
+                    </div>
+                    <div>
+                      <a href="">
+                        <AiOutlineHeart className="fs-5 me-2" /> Add to Wishlist
+                      </a>
+                    </div>
+                  </div>
+                  <div className="d-flex gap-10 align-items-center my-2">
+                    <h3 className="product-heading">Shipping & Returns :</h3>
+                    <p className="product-data">
+                      Free shipping and returns available on all orders ! <br/> We
+                      ship all domestic orders within <b>5-10 business days!</b>
+                    </p>
+                  </div>
                    <div className="d-flex gap-10 align-items-center my-2">
-                    <h3 className="product-heading">Availabilty :</h3>
-                    <p className="product-data">In Stock</p>
+                    <h3 className="product-heading">Copy Product Link :</h3>
+                    <p className="product-data">
+                      
+                    </p>
                   </div>
                 </div>
               </div>
