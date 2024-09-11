@@ -72,11 +72,34 @@ const SingleProduct = () => {
                     />
                     <p className="mb-0 t-review">2 Reviews</p>
                   </div>
-                  <a href="#review" className="review-btn">Write a Review</a>
+                  <a href="#review" className="review-btn">
+                    Write a Review
+                  </a>
                 </div>
                 <div className="border-bottom py-3">
-                  <div className="d-flex gap-10 align-items-center">
-                    <h3 className="product-heading">ABC :</h3> <p className="product-data">GFF</p>
+                  <div className="d-flex gap-10 align-items-center my-2">
+                    <h3 className="product-heading">Type :</h3>
+                    <p className="product-data">Watch</p>
+                  </div>
+                  <div className="d-flex gap-10 align-items-center my-2">
+                    <h3 className="product-heading">Brand :</h3>
+                    <p className="product-data">Havells</p>
+                  </div>
+                  <div className="d-flex gap-10 align-items-center my-2">
+                    <h3 className="product-heading">Category :</h3>
+                    <p className="product-data">Watch</p>
+                  </div>
+                  <div className="d-flex gap-10 align-items-center my-2">
+                    <h3 className="product-heading">Tags :</h3>
+                    <p className="product-data">Watch</p>
+                  </div>
+                  <div className="d-flex gap-10 align-items-center my-2">
+                    <h3 className="product-heading">Availabilty :</h3>
+                    <p className="product-data">In Stock</p>
+                  </div>
+                   <div className="d-flex gap-10 align-items-center my-2">
+                    <h3 className="product-heading">Availabilty :</h3>
+                    <p className="product-data">In Stock</p>
                   </div>
                 </div>
               </div>
@@ -115,7 +138,7 @@ const SingleProduct = () => {
                     </div>
                   )}
                 </div>
-                <div  className="review-form py-4">
+                <div className="review-form py-4">
                   <h4>Wtite a Review</h4>
                   <form action="" className="d-flex flex-column gap-15">
                     <div>
