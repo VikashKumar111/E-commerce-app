@@ -1,6 +1,7 @@
 import React from "react";
 import Meta from "../components/Meta";
 import BreadCrumb from "../components/BreadCrumb";
+import watch from "../images/watch.jpg"; 
 
 const Cart = () => {
   return (
@@ -18,7 +19,12 @@ const Cart = () => {
                 <h4 className="cart-col-4">Total</h4>
               </div>
               <div className="cart-data py-3 d-flex justify-content-between align-content-center">
-                <div className="cart-col-1"></div>
+                              <div className="cart-col-1 d-flex align-items-center">
+                                  <div>
+                                      <img src={watch} alt="product images" />
+                                  </div>
+                                  <div></div>
+                </div>
                 <div className="cart-col-2"></div>
                 <div className="cart-col-3"></div>
                 <div className="cart-col-4"></div>
