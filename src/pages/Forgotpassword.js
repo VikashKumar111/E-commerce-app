@@ -3,14 +3,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Meta from "../components/Meta";
 import BreadCrumb from "../components/BreadCrumb";
+import Container from "../components/Container";
 
 const Forgotpassword = () => {
   return (
     <>
       <Meta title="Login" />
       <BreadCrumb title="Login" />
-      <div className="login-wrapper py-5 home-wrapper-2">
-        <div className="container-xxl">
+      <Container className="login-wrapper py-5 home-wrapper-2">
           <div className="row">
             <div className="col-12">
               <div className="auth-card">
@@ -39,8 +39,7 @@ const Forgotpassword = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+      </Container>
     </>
   );
 };
