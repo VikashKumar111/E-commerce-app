@@ -7,7 +7,7 @@ import Container from "../components/Container";
 const Checkout = () => {
   return (
     <>
-      <Container className="checkout-wrapper py-5 home-wrapper-2">
+      <Container class1="checkout-wrapper py-5 home-wrapper-2">
         <div className="row">
           <div className="col-7">
             <div className="checkout-left-data">

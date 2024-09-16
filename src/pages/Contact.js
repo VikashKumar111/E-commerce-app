@@ -10,7 +10,7 @@ const Contact = () => {
     <>
       <Meta title="Contact Us" />
       <BreadCrumb title="Contact Us" />
-      <Container className="contact-wrapper py-5 home-wrapper-2">
+      <Container class1="contact-wrapper py-5 home-wrapper-2">
           <div className="row">
             <div className="col-12">
               <iframe

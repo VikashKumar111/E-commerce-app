@@ -8,7 +8,7 @@ const Wishlist = () => {
     <>
       <Meta title="Wishlist" />
       <BreadCrumb title="wishlist" />
-      <Container className="wishlist-wrapper home-wrapper-2 py-5">
+      <Container class1="wishlist-wrapper home-wrapper-2 py-5">
           <div className="row">
             <div className="col-3">
               <div className="wishlist-card position-relative">

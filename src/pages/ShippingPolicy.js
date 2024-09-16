@@ -8,7 +8,7 @@ const ShippingPolicy = () => {
     <>
       <Meta title="Shipping Policy" />
       <BreadCrumb title="ShippingPolicy" />
-      <Container className="policy-wrapper home-wrapper-2 py-5">
+      <Container class1="policy-wrapper home-wrapper-2 py-5">
           <div className="row">
             <div className="col-12">
               <div className="policy">
