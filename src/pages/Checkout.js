@@ -1,6 +1,7 @@
 import React from "react";
 import { BiArrowBack } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import watch from "../images/watch.jpg";
 
 const Checkout = () => {
   return (
@@ -17,11 +18,18 @@ const Checkout = () => {
                 >
                   <ol className="breadcrumb">
                     <li className="breadcrumb-item">
-                      <a href="#">Home</a>
+                      <Link to="/cart" className="text-dark">
+                        Cart
+                      </Link>
                     </li>
                     &nbsp; /
                     <li className="breadcrumb-item active" aria-current="page">
-                      Library
+                      Information
+                    </li>
+                    &nbsp; /<li className="breadcrumb-item active">Shipping</li>
+                    &nbsp; /
+                    <li className="breadcrumb-item active" aria-current="page">
+                      Payment
                     </li>
                   </ol>
                 </nav>
@@ -100,7 +108,37 @@ const Checkout = () => {
                 </form>
               </div>
             </div>
-            <div className="col-5"></div>
+            <div className="col-5">
+              <div className="border-bottom py-4">
+                <div className="d-flex align-items-center gap-10">
+                  <div className="w-75 d-flex gap-10">
+                    <div className="w-25">
+                      <img className="img-fluid" src={watch } alt="product" />
+                    </div>
+                    <div>
+                      <h5 className="title">hhfhjddnc</h5>
+                      <p>fhfhhjckdkd</p>
+                    </div>
+                  </div>
+                  <div className="flex-grow-1">
+                  <h5>$ 100</h5></div>
+                </div>
+              </div>
+              <div className="border-bottom py-4">
+                <div className="d-flex justify-content-between align-items-center">
+                  <p>Subtotal</p>
+                  <p>$ 10000</p>
+                </div>
+                <div className="d-flex justify-content-between align-items-center">
+                  <p className="mb-0">Shipping</p>
+                  <p className="mb-0">$ 10000</p>
+                </div>
+              </div>
+              <div className="border-bottom py-4 d-flex justify-content-between align-items-center">
+                <h4>Total</h4>
+                <h5>$ 10000</h5>
+              </div>
+            </div>
           </div>
         </div>
       </div>
