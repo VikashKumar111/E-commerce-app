@@ -50,7 +50,7 @@ const Cart = () => {
                     />
                   </div>
                   <div>
-                    <AiFillDelete />
+                    <AiFillDelete className="text-danger"/>
                   </div>
                 </div>
                 <div className="cart-col-4">
@@ -87,7 +87,7 @@ const Cart = () => {
                     />
                   </div>
                   <div>
-                    <AiFillDelete />
+                    <AiFillDelete className="text-danger"/>
                   </div>
                 </div>
                 <div className="cart-col-4">

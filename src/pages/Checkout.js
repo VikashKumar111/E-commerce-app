@@ -1,4 +1,5 @@
 import React from "react";
+import { BiArrowBack } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
 const Checkout = () => {
@@ -87,8 +88,10 @@ const Checkout = () => {
                     />
                   </div>
                   <div className="w-100">
-                    <div className="d-flex">
-                      <Link to="/cart">Return to Cart</Link>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <Link to="/cart" className="text-dark">
+                        <BiArrowBack className="me-2" /> Return to Cart
+                      </Link>
                       <Link to="/cart" className="button">
                         Continue to Shipping
                       </Link>
