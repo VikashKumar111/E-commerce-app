@@ -1,14 +1,14 @@
 import React from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
+import Container from "../components/Container";
 
 const Signup = () => {
   return (
     <>
       <Meta title="Sign Up" />
       <BreadCrumb title="Sign Up" />
-      <div className="login-wrapper py-5 home-wrapper-2">
-        <div className="container-xxl">
+      <Container className="login-wrapper py-5 home-wrapper-2">
           <div className="row">
             <div className="col-12">
               <div className="auth-card">
@@ -57,8 +57,7 @@ const Signup = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+      </Container>
     </>
   );
 };

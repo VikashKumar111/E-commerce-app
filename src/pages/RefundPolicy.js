@@ -1,14 +1,14 @@
 import React from "react";
 import Meta from "../components/Meta";
 import BreadCrumb from "../components/BreadCrumb";
+import Container from "../components/Container";
 
 const RefundPolicy = () => {
   return (
     <>
       <Meta title="Refund Policy" />
       <BreadCrumb title="RefundPolicy" />
-      <section className="policy-wrapper home-wrapper-2 py-5">
-        <div className="container-xxl">
+      <Container className="policy-wrapper home-wrapper-2 py-5">
           <div className="row">
             <div className="col-12">
               <div className="policy">
@@ -23,8 +23,7 @@ const RefundPolicy = () => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+      </Container>
     </>
   );
 };
