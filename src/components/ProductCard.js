@@ -6,41 +6,44 @@ import watch from "../images/watch.jpg";
 import watch2 from "../images/watch2.jpg";
 import prodcompare from "../images/prodcompare.svg";
 import view from "../images/view.svg";
-import addcart  from "../images/add-cart.svg";
+import addcart from "../images/add-cart.svg";
 
 const ProductCard = (props) => {
   const { grid } = props;
   let location = useLocation();
 
-
   return (
     <>
       <div
-        className={`${location.pathname == "/product" ? `gr-${grid}` : "col-3 mb-4"}`}
+        className={`${
+          location.pathname == "/product" ? `gr-${grid}` : "col-3 mb-4"
+        }`}
       >
-        <Link to=":id" className="product-card position-relative">
+        <Link
+          to={`${
+            location.pathname == "/"
+              ? "/product/:id"
+              : location.pathname == "/product/:id"
+              ? "/product/1"
+              : ":id"
+          }`}
+          className="product-card position-relative"
+        >
           <div className="wishlist-icon position-absolute">
             <button className="border-0 bg-transparent">
               <img src={wish} alt="wishlist" />
             </button>
           </div>
           <div className="product-image">
-            <img
-              src={watch}
-              className="img-fluid"
-              alt="product image"
-            />
-            <img
-              src={watch2}
-              className="img-fluid"
-              alt="product image"
-            />
+            <img src={watch} className="img-fluid" alt="product image" />
+            <img src={watch2} className="img-fluid" alt="product image" />
           </div>
           <div className="product-details">
             <h6 className="brand">Havels</h6>
-            <h5 className="product-title">Kids headphones bulk 10 pack multi colored for students
+            <h5 className="product-title">
+              Kids headphones bulk 10 pack multi colored for students
             </h5>
-              
+
             <ReactStars
               count={5}
               size={24}
@@ -69,25 +72,28 @@ const ProductCard = (props) => {
         </Link>
       </div>
       <div
-        className={`${location.pathname == "/product" ? `gr-${grid}` : "col-3"}`}
+        className={`${
+          location.pathname == "/product" ? `gr-${grid}` : "col-3"
+        }`}
       >
-        <Link to="product/:id" className="product-card position-relative">
+        <Link
+          to={`${
+            location.pathname == "/"
+              ? "/product/:id"
+              : location.pathname == "/product/:id"
+              ? "/product/1"
+              : ":id"
+          }`}
+          className="product-card position-relative"
+        >
           <div className="wishlist-icon position-absolute">
             <button className="border-0 bg-transparent">
               <img src={wish} alt="wishlist" />
             </button>
           </div>
           <div className="product-image">
-            <img
-              src={watch}
-              className="img-fluid"
-              alt="product image"
-            />
-            <img
-              src={watch2}
-              className="img-fluid"
-              alt="product image"
-            />
+            <img src={watch} className="img-fluid" alt="product image" />
+            <img src={watch2} className="img-fluid" alt="product image" />
           </div>
           <div className="product-details">
             <h6 className="brand">Havels</h6>
