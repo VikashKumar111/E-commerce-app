@@ -1,6 +1,12 @@
 import React from "react";
 import ReactStars from "react-rating-stars-component";
 import { Link, useLocation } from "react-router-dom";
+import wish from "../images/wish.svg";
+import watch from "../images/watch.jpg";
+import watch2 from "../images/watch2.jpg";
+import prodcompare from "../images/prodcompare.svg";
+import view from "../images/view.svg";
+import addcart  from "../images/add-cart.svg";
 
 const ProductCard = (props) => {
   const { grid } = props;
@@ -15,17 +21,17 @@ const ProductCard = (props) => {
         <Link to=":id" className="product-card position-relative">
           <div className="wishlist-icon position-absolute">
             <button className="border-0 bg-transparent">
-              <img src="images/wish.svg" alt="wishlist" />
+              <img src={wish} alt="wishlist" />
             </button>
           </div>
           <div className="product-image">
             <img
-              src="images/watch.jpg"
+              src={watch}
               className="img-fluid"
               alt="product image"
             />
             <img
-              src="images/watch2.jpg"
+              src={watch2}
               className="img-fluid"
               alt="product image"
             />
@@ -51,13 +57,13 @@ const ProductCard = (props) => {
           </div>
           <div className="action-bar position-absolute d-flex flex-column gap-15">
             <button className="border-0 bg-transparent">
-              <img src="images/prodcompare.svg" alt="compare" />
+              <img src={prodcompare} alt="compare" />
             </button>
             <button className="border-0 bg-transparent">
-              <img src="images/view.svg" alt="view" />
+              <img src={view} alt="view" />
             </button>
             <button className="border-0 bg-transparent">
-              <img src="images/add-cart.svg" alt="addcart" />
+              <img src={addcart} alt="addcart" />
             </button>
           </div>
         </Link>
@@ -68,17 +74,17 @@ const ProductCard = (props) => {
         <Link to="product/:id" className="product-card position-relative">
           <div className="wishlist-icon position-absolute">
             <button className="border-0 bg-transparent">
-              <img src="images/wish.svg" alt="wishlist" />
+              <img src={wish} alt="wishlist" />
             </button>
           </div>
           <div className="product-image">
             <img
-              src="images/watch.jpg"
+              src={watch}
               className="img-fluid"
               alt="product image"
             />
             <img
-              src="images/watch2.jpg"
+              src={watch2}
               className="img-fluid"
               alt="product image"
             />
@@ -104,13 +110,13 @@ const ProductCard = (props) => {
           </div>
           <div className="action-bar position-absolute d-flex flex-column gap-15">
             <button className="border-0 bg-transparent">
-              <img src="images/prodcompare.svg" alt="compare" />
+              <img src={prodcompare} alt="compare" />
             </button>
             <button className="border-0 bg-transparent">
-              <img src="images/view.svg" alt="view" />
+              <img src={view} alt="view" />
             </button>
             <button className="border-0 bg-transparent">
-              <img src="images/add-cart.svg" alt="addcart" />
+              <img src={addcart} alt="addcart" />
             </button>
           </div>
         </Link>

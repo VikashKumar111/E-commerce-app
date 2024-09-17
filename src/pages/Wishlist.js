@@ -2,7 +2,8 @@ import React from "react";
 import Meta from "../components/Meta";
 import BreadCrumb from "../components/BreadCrumb";
 import Container from "../components/Container";
-
+import cross from "../images/cross.svg";
+import watch  from "../images/watch.jpg";
 const Wishlist = () => {
   return (
     <>
@@ -13,13 +14,13 @@ const Wishlist = () => {
             <div className="col-3">
               <div className="wishlist-card position-relative">
                 <img
-                  src="images/cross.svg"
+                  src={cross}
                   alt="cross"
                   className="position-absolute cross img-fluid"
                 />
                 <div className="wishlist-card-image">
                   <img
-                    src="images/watch.jpg"
+                    src={watch}
                     className="img-fluid w-100"
                     alt="watch"
                   />
@@ -36,13 +37,13 @@ const Wishlist = () => {
             <div className="col-3">
               <div className="wishlist-card position-relative">
                 <img
-                  src="images/cross.svg"
+                  src={cross}
                   alt="cross"
                   className="position-absolute cross img-fluid"
                 />
                 <div className="wishlist-card-image">
                   <img
-                    src="images/watch.jpg"
+                    src={watch}
                     className="img-fluid w-100"
                     alt="watch"
                   />
@@ -59,13 +60,13 @@ const Wishlist = () => {
             <div className="col-3">
               <div className="wishlist-card position-relative">
                 <img
-                  src="images/cross.svg"
+                  src={cross}
                   alt="cross"
                   className="position-absolute cross img-fluid"
                 />
                 <div className="wishlist-card-image">
                   <img
-                    src="images/watch.jpg"
+                    src={watch}
                     className="img-fluid w-100"
                     alt="watch"
                   />

@@ -3,7 +3,9 @@ import Meta from "../components/Meta";
 import BreadCrumb from "../components/BreadCrumb";
 import Color from "../components/Color";
 import Container from "../components/Container";
-
+import cross from "../images/cross.svg";
+import watch  from "../images/watch.jpg";
+import { BsCrosshair } from "react-icons/bs";
 const CompareProduct = () => {
   return (
     <>
@@ -14,12 +16,12 @@ const CompareProduct = () => {
             <div className="col-3">
               <div className="compare-product-card position-relative">
                 <img
-                  src="images/cross.svg"
+                  src={cross}
                   alt="cross"
                   className="position-absolute cross"
                 />
                 <div className="product-card-image">
-                  <img src="images/watch.jpg" alt="watch" />
+                <img src={watch} alt="watch" />
                 </div>
                 <div className="compare-product-details">
                   <h5 className="title">
@@ -58,12 +60,12 @@ const CompareProduct = () => {
              <div className="col-3">
               <div className="compare-product-card position-relative">
                 <img
-                  src="images/cross.svg"
+                  src={cross}
                   alt="cross"
                   className="position-absolute cross"
                 />
                 <div className="product-card-image">
-                  <img src="images/watch.jpg" alt="watch" />
+                  <img src={watch} alt="watch" />
                 </div>
                 <div className="compare-product-details">
                   <h5 className="title">

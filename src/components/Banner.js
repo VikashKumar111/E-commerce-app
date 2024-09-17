@@ -1,6 +1,7 @@
 import React from 'react'
 import './Banner.css';
 import { Link } from 'react-router-dom';
+import banner  from "../images/main-banner-1.jpg";
 
 const Banner = () => {
   return (
@@ -9,7 +10,7 @@ const Banner = () => {
         <div className='row'>
           <div className='col-6'>
             <div className='main-banner p-3'>
-              <img src='images/main-banner-1.jpg' className='img-fluid rounded-3' alt='main banner' />
+              <img src={banner} className='img-fluid rounded-3' alt='main banner' />
               <div>
                 <h4>SUPERCHARGED FOR PROS.</h4>
                 <h5>iPad S13+ Pro.</h5>
