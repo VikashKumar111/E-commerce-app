@@ -33,8 +33,9 @@ const Checkout = () => {
                   </li>
                 </ol>
               </nav>
-              <h4 className="title">Contact Information</h4>
-              <p className="user-details">vkvk(vkghfh@gmail.com)</p>
+              <h4 className="title total">Contact Information</h4>
+              <p className="user-details total">vkvk(vkghfh@gmail.com)</p>
+              <h4 className="mb-3">Shipping Address</h4>
               <form
                 action=""
                 className="d-flex gap-15 flex-wrap justify-content-between"
@@ -110,34 +111,40 @@ const Checkout = () => {
           </div>
           <div className="col-5">
             <div className="border-bottom py-4">
-              <div className="d-flex align-items-center gap-10">
+              <div className="d-flex mb-2 align-items-center gap-10">
                 <div className="w-75 d-flex gap-10">
-                  <div className="w-25">
+                  <div className="w-25 position-relative">
+                    <span
+                      style={{ top: "-10px", right: "2px" }}
+                      className="badge bg-secondary text-white rounded-circle p-2 position-absolute"
+                    >
+                      1
+                    </span>
                     <img className="img-fluid" src={watch} alt="product" />
                   </div>
                   <div>
-                    <h5 className="title">hhfhjddnc</h5>
-                    <p>fhfhhjckdkd</p>
+                    <h5 className="total-price">hhfhjddnc</h5>
+                    <p className="total-price">fhfhhjckdkd</p>
                   </div>
                 </div>
                 <div className="flex-grow-1">
-                  <h5>$ 100</h5>
+                  <h5 className="total">$ 100</h5>
                 </div>
               </div>
             </div>
             <div className="border-bottom py-4">
               <div className="d-flex justify-content-between align-items-center">
-                <p>Subtotal</p>
-                <p>$ 10000</p>
+                <p className="total">Subtotal</p>
+                <p className="total-price">$ 10000</p>
               </div>
               <div className="d-flex justify-content-between align-items-center">
-                <p className="mb-0">Shipping</p>
-                <p className="mb-0">$ 10000</p>
+                <p className="mb-0 total">Shipping</p>
+                <p className="mb-0 total-price">$ 10000</p>
               </div>
             </div>
             <div className="border-bottom py-4 d-flex justify-content-between align-items-center">
-              <h4>Total</h4>
-              <h5>$ 10000</h5>
+              <h4 className="total">Total</h4>
+              <h5 className="total-price">$ 10000</h5>
             </div>
           </div>
         </div>
