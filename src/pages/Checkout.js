@@ -18,17 +18,17 @@ const Checkout = () => {
               >
                 <ol className="breadcrumb">
                   <li className="breadcrumb-item">
-                    <Link to="/cart" className="text-dark">
+                    <Link to="/cart" className="text-dark total-price">
                       Cart
                     </Link>
                   </li>
-                  &nbsp; /
-                  <li className="breadcrumb-item active" aria-current="page">
+                  &nbsp; / &nbsp;
+                  <li className="breadcrumb-item total-price active" aria-current="page">
                     Information
                   </li>
-                  &nbsp; /<li className="breadcrumb-item active">Shipping</li>
+                  &nbsp; /<li className="breadcrumb-item total-price active">Shipping</li>
                   &nbsp; /
-                  <li className="breadcrumb-item active" aria-current="page">
+                  <li className="breadcrumb-item total-price active" aria-current="page">
                     Payment
                   </li>
                 </ol>
