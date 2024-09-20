@@ -4,28 +4,31 @@ import Meta from "../components/Meta";
 import Container from "../components/Container";
 import CustomInput from "../components/CustomInput";
 import { useFormik } from "formik";
+import { useDispatch } from 'react-redux';
 import * as yup from "yup";
+import { registerUser } from '../features/user/userSlice';
 
 const signUpSchema = yup.object({
-  firstName: yup.string().required("First Name is Required"),
-  lastName: yup.string().required("Last Name is Required"),
-  email: yup.string().nullable().required("Email is Required"),
+  firstname: yup.string().required("First Name is Required"),
+  lastname: yup.string().required("Last Name is Required"),
+  email: yup.string().email("Email should be Valid").required("Email Address is Required"),
   mobile: yup.string().required("Mobile Number is Required"),
   password: yup.string().required("Password is Required"),
 });
 
 const Signup = () => {
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
-      firstName: "",
-      lastName: "",
+      firstname: "",
+      lastname: "",
       email: "",
       mobile: "",
       password: "",
     },
     validationSchema: signUpSchema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      dispatch(registerUser(values));
     },
   });
   return (
@@ -46,23 +49,23 @@ const Signup = () => {
                   type="text"
                   name="firstname"
                   placeholder="First Name"
-                  value={formik.values.firstName}
-                  onChange={formik.handleChange("firstName")}
-                  onBlur={formik.handleBlur("firstName")}
+                  value={formik.values.firstname}
+                  onChange={formik.handleChange("firstname")}
+                  onBlur={formik.handleBlur("firstname")}
                 />
                 <div className="error">
-                  {formik.touched.firstName && formik.errors.firstName}
+                  {formik.touched.firstname && formik.errors.firstname}
                 </div>
                 <CustomInput
                   type="text"
                   name="lastname"
                   placeholder="Last Name"
-                  value={formik.values.lastName}
-                  onChange={formik.handleChange("lastName")}
-                  onBlur={formik.handleBlur("lastName")}
+                  value={formik.values.lastname}
+                  onChange={formik.handleChange("lastname")}
+                  onBlur={formik.handleBlur("lastname")}
                 />
                 <div className="error">
-                  {formik.touched.lastName && formik.errors.lastName}
+                  {formik.touched.lastname && formik.errors.lastname}
                 </div>
                 <CustomInput
                   type="email"
