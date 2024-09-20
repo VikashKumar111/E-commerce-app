@@ -31,6 +31,7 @@ const Signup = () => {
       dispatch(registerUser(values));
     },
   });
+  
   return (
     <>
       <Meta title="Sign Up" />
