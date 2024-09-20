@@ -47,7 +47,7 @@ export const authSlice = createSlice({
         state.isSuccess = true;
         state.createdUser = action.payload;
         if (state.isSuccess === true) {
-          toast.info("User Craeted Successfully");
+          toast.info("User Created Successfully");
         }
       })
       .addCase(registerUser.rejected, (state, action) => {
@@ -68,7 +68,7 @@ export const authSlice = createSlice({
         state.isSuccess = true;
         state.createdUser = action.payload;
         if (state.isSuccess === true) {
-          toast.info("User LoggedIn Successfully");
+          toast.info("User Logged In Successfully");
         }
       })
       .addCase(loginUser.rejected, (state, action) => {

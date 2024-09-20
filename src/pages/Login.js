@@ -6,6 +6,8 @@ import Container from "../components/Container";
 import CustomInput from "../components/CustomInput";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../features/user/userSlice";
 
 const loginSchema = yup.object({
   email: yup
@@ -16,6 +18,7 @@ const loginSchema = yup.object({
 });
 
 const Login = () => {
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -23,10 +26,10 @@ const Login = () => {
     },
     validationSchema: loginSchema,
     onSubmit: (values) => {
-      // dispatch(registerUser(values));
+      dispatch(loginUser(values));
     },
   });
-  
+
   return (
     <>
       <Meta title="Login" />
@@ -36,7 +39,7 @@ const Login = () => {
           <div className="col-12">
             <div className="auth-card">
               <h3 className="text-center mb-3">Login</h3>
-              <form action="" className="d-flex flex-column gap-15">
+              <form action="" onSubmit={formik.handleSubmit} className="d-flex flex-column gap-15">
                 <CustomInput
                   type="email"
                   name="email"
