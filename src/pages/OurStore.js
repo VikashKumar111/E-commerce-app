@@ -10,12 +10,15 @@ import gr4 from "../images/gr4.svg";
 import gr3 from "../images/gr3.svg";
 import gr2 from "../images/gr2.svg";
 import gr from "../images/gr.svg";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../features/products/productSlice";
 
 const OurStore = () => {
   const [grid, setGrid] = useState(4);
   const dispatch = useDispatch();
+  const productState = useSelector((state) => state.product.product);
+
+  console.log(productState);
 
   useEffect(() => {
     getProducts();
@@ -260,7 +263,7 @@ const OurStore = () => {
             </div>
             <div className="products-list pb-5">
               <div className="d-flex gap-10 flex-wrap">
-                <ProductCard grid={grid} />
+                <ProductCard data={productState} grid={grid} />
               </div>
             </div>
           </div>
