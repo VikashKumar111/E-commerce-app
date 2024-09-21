@@ -5,9 +5,9 @@ const register = async (userData) => {
   console.log(userData);
   const response = await axios.post(`${base_url}user/register`, userData);
     if (response && response.data) {
-    return response.data; // Return the response data if it exists
+    return response.data; 
   } else {
-    throw new Error("No response data"); // Handle unexpected empty responses
+    throw new Error("No response data"); 
   }
 };
 
@@ -15,9 +15,9 @@ const login = async (userData) => {
   console.log(userData);
   const response = await axios.post(`${base_url}user/login`, userData);
     if (response && response.data) {
-    return response.data; // Return the response data if it exists
+    return response.data; 
   } else {
-    throw new Error("No response data"); // Handle unexpected empty responses
+    throw new Error("No response data"); 
   }
 };
 
