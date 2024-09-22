@@ -2,15 +2,15 @@ import React from "react";
 import ReactStars from "react-rating-stars-component";
 import { Link, useLocation } from "react-router-dom";
 import wish from "../images/wish.svg";
-import watch from "../images/watch.jpg";
+// import watch from "../images/watch.jpg";
 import watch2 from "../images/watch2.jpg";
 import prodcompare from "../images/prodcompare.svg";
 import view from "../images/view.svg";
 import addcart from "../images/add-cart.svg";
 
 const ProductCard = (props) => {
-  const { grid } = props;
-  const data = props.data || [];
+  const { grid , data} = props;
+  // const data = props.data || [];
   let location = useLocation();
 
   return (
@@ -39,7 +39,7 @@ const ProductCard = (props) => {
                 </button>
               </div>
               <div className="product-image">
-                <img src={watch} className="img-fluid" alt="product" />
+                <img src={item?.images[0].url} className="img-fluid" alt="product" />
                 <img src={watch2} className="img-fluid" alt="product " />
               </div>
               <div className="product-details">
@@ -47,11 +47,10 @@ const ProductCard = (props) => {
                 <h5 className="product-title">
                   {item?.title}
                 </h5>
-
                 <ReactStars
                   count={5}
                   size={24}
-                  value={3}
+                  value={item?.totalrating.toString()}
                   edit={false}
                   activeColor="#ffd700"
                 />
@@ -62,7 +61,7 @@ const ProductCard = (props) => {
                   dangerouslySetInnerHTML={{ __html: item?.description }}
                 >
                 </p>
-                <p className="price">{item?.price}</p>
+                <p className="price">${item?.price}</p>
               </div>
               <div className="action-bar position-absolute d-flex flex-column gap-15">
                 <button className="border-0 bg-transparent">
