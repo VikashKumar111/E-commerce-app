@@ -1,5 +1,5 @@
 import axios from "axios";
-import { base_url } from "../../utils/axiosConfig";
+import { base_url, config } from "../../utils/axiosConfig";
 
 const register = async (userData) => {
   console.log(userData);
@@ -23,7 +23,18 @@ const login = async (userData) => {
   }
 };
 
+
+const getUserWishlist = async () => {
+  const response = await axios.get(`${base_url}user/wishlist`, config);
+  if (response.data) {
+    return response.data;
+  }else {
+    throw new Error("No response data");
+  }
+}
+
 export const authService = {
   register,
   login,
+  getUserWishlist,
 };

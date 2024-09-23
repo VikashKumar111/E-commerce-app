@@ -27,6 +27,7 @@ export const loginUser = createAsyncThunk(
 const getCustomerFromLocalStorage = localStorage.getItem("customer")
   ? JSON.parse(localStorage.getItem("customer"))
   : null;
+
 const initialState = {
   user: getCustomerFromLocalStorage,
   isError: false,
@@ -71,7 +72,7 @@ export const authSlice = createSlice({
         state.isSuccess = true;
         state.createdUser = action.payload;
         if (state.isSuccess === true) {
-          localStorage.setItem("Token", action.payload.token);
+          localStorage.setItem("customer", action.payload.token);
           toast.info("User Logged In Successfully");
         }
       })

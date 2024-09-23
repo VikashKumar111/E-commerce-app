@@ -7,7 +7,7 @@ export const getAllProducts = createAsyncThunk(
     try {
       return await productService.getProducts();
     } catch (error) {
-      return thunkAPI.rejectWithvalue(error);
+      return thunkAPI.rejectWithValue(error);
     }
   }
 );
@@ -25,10 +25,12 @@ export const addToWishlist = createAsyncThunk(
 
 const initialState = {
   product: "",
+  wishlist:[],
   isError: false,
   isSuccess: false,
   isLoading: false,
   message: "",
+    error: null,
 };
 
 export const productSlice = createSlice({
@@ -50,7 +52,7 @@ export const productSlice = createSlice({
         state.isLoading = false;
         state.isError = true;
         state.isSuccess = false;
-        state.message = action.error;
+        state.message = action.error.message;
       })
       .addCase(addToWishlist.pending, (state) => {
         state.isLoading = true;
@@ -58,15 +60,17 @@ export const productSlice = createSlice({
         state.isLoading = false;
         state.isError = false;
         state.isSuccess = true;
-        state.addToWishlist = action.payload;
+        state.wishlist.push(action.payload);
         state.message = "Product Added to Wishlist";
       }).addCase(addToWishlist.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.isSuccess = false;
-        state.message = action.error;
+        // state.message = action.error.message  || "Something went wrong";
+        state.error = action.payload || 'Failed to add to wishlist';
       });
   },
 });
 
 export default productSlice.reducer;
+
