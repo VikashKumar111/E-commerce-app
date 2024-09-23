@@ -51,6 +51,20 @@ export const productSlice = createSlice({
         state.isError = true;
         state.isSuccess = false;
         state.message = action.error;
+      })
+      .addCase(addToWishlist.pending, (state) => {
+        state.isLoading = true;
+      }).addCase(addToWishlist.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isError = false;
+        state.isSuccess = true;
+        state.addToWishlist = action.payload;
+        state.message = "Product Added to Wishlist";
+      }).addCase(addToWishlist.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.isSuccess = false;
+        state.message = action.error;
       });
   },
 });
