@@ -12,6 +12,17 @@ export const getAllProducts = createAsyncThunk(
   }
 );
 
+export const addToWishlist = createAsyncThunk(
+  "product/wishlist",
+  async (prodId,thunkAPI) => {
+    try {
+      return await productService.addToWishlist(prodId);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+
 const initialState = {
   product: "",
   isError: false,
