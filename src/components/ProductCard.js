@@ -68,7 +68,7 @@ const ProductCard = (props) => {
                   dangerouslySetInnerHTML={{ __html: item?.description }}
                 >
                 </p>
-                <p className="price">${item?.price}</p>
+                <p className="price">$ {item?.price}</p>
               </div>
               <div className="action-bar position-absolute d-flex flex-column gap-15">
                 <button className="border-0 bg-transparent">

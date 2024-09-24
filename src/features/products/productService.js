@@ -1,5 +1,5 @@
 import axios from "axios";
-import { base_url, config } from "../../utils/axiosConfig";
+import { base_url} from "../../utils/axiosConfig";
 
 
 
@@ -26,7 +26,26 @@ const getProducts = async () => {
 
 const addToWishlist = async (prodId) => {
   try {
+     // Retrieve the token from localStorage
+    const token = localStorage.getItem("Token");
+
+    console.log("Token retrieved from localStorage:", token);
+
+    // If the token exists, include it in the headers
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    };
+    
+    // Log the config object to see what it's passing in the request
+    console.log("Config object:", config);
+
+    // Make the API request with the token
     const response = await axios.put(`${base_url}product/wishlist`, { prodId }, config);
+    
+    console.log("Wishlist response:", response);
     if (response && response.data) {
       return response.data;
     }
