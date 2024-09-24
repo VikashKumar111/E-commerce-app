@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Meta from "../components/Meta";
 import BreadCrumb from "../components/BreadCrumb";
 import Container from "../components/Container";
 import cross from "../images/cross.svg";
-import watch  from "../images/watch.jpg";
+import watch from "../images/watch.jpg";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserProductWishlist } from "../features/user/userSlice";
 const Wishlist = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    getWishlistFromDb();
+  }, []);
+
+  const getWishlistFromDb = () => {
+    dispatch(getUserProductWishlist());
+  };
+
+  const wishlistState = useSelector((state)=>state.auth)
   return (
     <>
       <Meta title="Wishlist" />

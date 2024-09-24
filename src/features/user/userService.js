@@ -1,5 +1,5 @@
 import axios from "axios";
-import { base_url ,config} from "../../utils/axiosConfig";
+import { base_url} from "../../utils/axiosConfig";
 
 const register = async (userData) => {
   console.log(userData);
@@ -44,6 +44,7 @@ const getUserWishlist = async () => {
     console.log("Config object:", config);
  
   const response = await axios.get(`${base_url}user/wishlist`, config);
+  console.log("User Wishlist response:", response);
   if (response.data) {
     return response.data;
   }else {
