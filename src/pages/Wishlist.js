@@ -17,83 +17,37 @@ const Wishlist = () => {
     dispatch(getUserProductWishlist());
   };
 
-  const wishlistState = useSelector((state)=>state.auth)
+  const wishlistState = useSelector((state) => state.auth.wishlist.wishlist);
   return (
     <>
       <Meta title="Wishlist" />
       <BreadCrumb title="wishlist" />
       <Container class1="wishlist-wrapper home-wrapper-2 py-5">
-          <div className="row">
-            <div className="col-3">
-              <div className="wishlist-card position-relative">
-                <img
-                  src={cross}
-                  alt="cross"
-                  className="position-absolute cross img-fluid"
-                />
-                <div className="wishlist-card-image">
+        <div className="row">
+          {wishlistState?.map((item, index) => {
+            return (
+              <div className="col-3">
+                <div className="wishlist-card position-relative">
                   <img
-                    src={watch}
-                    className="img-fluid w-100"
-                    alt="watch"
+                    src={cross}
+                    alt="cross"
+                    className="position-absolute cross img-fluid"
                   />
-                </div>
-                <div className="py-3 px-3">
-                  <h5 className="title">
-                    Galaxy Infinity Pro - 6.5" Super AMOLED, 6GB RAM, 48MP
-                    Triple Camera
-                  </h5>
-                  <h6 className="price mb-3 mt-3">$ 100</h6>
+                  <div className="wishlist-card-image">
+                    <img src={watch} className="img-fluid w-100" alt="watch" />
+                  </div>
+                  <div className="py-3 px-3">
+                    <h5 className="title">
+                      Galaxy Infinity Pro - 6.5" Super AMOLED, 6GB RAM, 48MP
+                      Triple Camera
+                    </h5>
+                    <h6 className="price mb-3 mt-3">$ 100</h6>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-3">
-              <div className="wishlist-card position-relative">
-                <img
-                  src={cross}
-                  alt="cross"
-                  className="position-absolute cross img-fluid"
-                />
-                <div className="wishlist-card-image">
-                  <img
-                    src={watch}
-                    className="img-fluid w-100"
-                    alt="watch"
-                  />
-                </div>
-                <div className="py-3 px-3">
-                  <h5 className="title">
-                    Galaxy Infinity Pro - 6.5" Super AMOLED, 6GB RAM, 48MP
-                    Triple Camera
-                  </h5>
-                  <h6 className="price mb-3 mt-3">$ 100</h6>
-                </div>
-              </div>
-            </div>
-            <div className="col-3">
-              <div className="wishlist-card position-relative">
-                <img
-                  src={cross}
-                  alt="cross"
-                  className="position-absolute cross img-fluid"
-                />
-                <div className="wishlist-card-image">
-                  <img
-                    src={watch}
-                    className="img-fluid w-100"
-                    alt="watch"
-                  />
-                </div>
-                <div className="py-3 px-3">
-                  <h5 className="title">
-                    Galaxy Infinity Pro - 6.5" Super AMOLED, 6GB RAM, 48MP
-                    Triple Camera
-                  </h5>
-                  <h6 className="price mb-3 mt-3">$ 100</h6>
-                </div>
-              </div>
-            </div>
-          </div>
+            );
+          })}
+        </div>
       </Container>
     </>
   );
