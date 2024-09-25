@@ -6,6 +6,8 @@ import cross from "../images/cross.svg";
 import watch from "../images/watch.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserProductWishlist } from "../features/user/userSlice";
+import { addToWishlist } from "../features/products/productSlice";
+
 const Wishlist = () => {
   const dispatch = useDispatch();
 
@@ -20,13 +22,20 @@ const Wishlist = () => {
   const wishlistState = useSelector((state) => state.auth.wishlist?.wishlist);
   console.log(wishlistState);
 
+  const removeFromWishlist = (id) => {
+    dispatch(addToWishlist(id));
+    setTimeout(() => {
+      dispatch(getUserProductWishlist());
+    }, 300);
+  };
+
   return (
     <>
       <Meta title="Wishlist" />
       <BreadCrumb title="wishlist" />
       <Container class1="wishlist-wrapper home-wrapper-2 py-5">
         <div className="row">
-          {/* {!wishlistState && <div>No Data</div>} */}
+          {wishlistState.length === 0 && <div className="text-center fs-3">No Data</div>}
           {wishlistState?.map((item, index) => {
             console.log(item?.images); // Check if images array exists
             console.log(item?.images[0]?.url); // Check if the URL is valid
@@ -34,6 +43,9 @@ const Wishlist = () => {
               <div className="col-3" key={index}>
                 <div className="wishlist-card position-relative">
                   <img
+                    onClick={() => {
+                      removeFromWishlist(item?._id);
+                    }}
                     src={cross}
                     alt="cross"
                     className="position-absolute cross img-fluid"
