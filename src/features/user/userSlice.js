@@ -37,7 +37,7 @@ export const getUserProductWishlist = createAsyncThunk(
 
 const getCustomerFromLocalStorage = localStorage.getItem("customer")
   ? JSON.parse(localStorage.getItem("customer"))
-  : null;
+  : '';
 
 const initialState = {
   user: getCustomerFromLocalStorage,
