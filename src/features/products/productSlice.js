@@ -31,7 +31,7 @@ const initialState = {
   isSuccess: false,
   isLoading: false,
   message: "",
-    error: null,
+  error: null,
 };
 
 export const productSlice = createSlice({
