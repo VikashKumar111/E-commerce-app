@@ -35,7 +35,7 @@ const Wishlist = () => {
       <BreadCrumb title="wishlist" />
       <Container class1="wishlist-wrapper home-wrapper-2 py-5">
         <div className="row">
-          {wishlistState.length === 0 && <div className="text-center fs-3">No Data</div>}
+          {wishlistState?.length === 0 && <div className="text-center fs-3">No Data</div>}
           {wishlistState?.map((item, index) => {
             console.log(item?.images); // Check if images array exists
             console.log(item?.images[0]?.url); // Check if the URL is valid

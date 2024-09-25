@@ -4,7 +4,7 @@ const getTokenFromLocalStorage = localStorage.getItem("token")
   ? JSON.parse(localStorage.getItem("token"))
   : null;
 
-console.log(getTokenFromLocalStorage);
+// console.log(getTokenFromLocalStorage);
 export  const config = {
   headers: {
     Authorization: `Bearer ${
