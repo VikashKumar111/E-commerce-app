@@ -15,6 +15,7 @@ const Blog = () => {
   const getBlogs = () => {
     dispatch(getAllBlogs());
   };
+  console.log(blogState);
   return (
     <>
       <Meta title="Blogs" />
@@ -40,7 +41,7 @@ const Blog = () => {
           </div>
           <div className="col-9">
             <div className="row">
-              {blogState?.map((item, index) => {
+              {!blogState === " " ? blogState.map((item, index) => {
                 return (
                   <div className="col-6 mb-3" key={index}>
                     <BlogCard 
@@ -51,7 +52,7 @@ const Blog = () => {
                     />
                   </div>
                 );
-              })}
+              }): ""}
             </div>
           </div>
         </div>

@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import blog  from "../images/blog-1.jpg";
 
 const BlogCard = (props) => {
-  const [id, title, description, image ,date] = props;
+  console.log("i am running");
+  const {id, title, description, image, date} = props;
   return (
       <div className="blog-card">
         <div className="card-image">
