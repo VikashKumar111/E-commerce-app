@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 import BlogCard from "../components/BlogCard";
 import Container from "../components/Container";
+import { getAllBlogs } from "../features/blog/blogSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Blog = () => {
+  const blogState = useSelector((state) => state.blog.blog);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    getBlogs();
+  }, []);
+  const getBlogs = () => {
+    dispatch(getAllBlogs());
+  };
   return (
     <>
       <Meta title="Blogs" />
