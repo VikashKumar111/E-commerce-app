@@ -7,7 +7,7 @@ import { getAllBlogs } from "../features/blog/blogSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Blog = () => {
-  const blogState = useSelector((state) => state.blog.blog);
+  const blogState = useSelector((state) => state?.blog?.blog);
   const dispatch = useDispatch();
   useEffect(() => {
     getBlogs();
@@ -40,15 +40,6 @@ const Blog = () => {
           </div>
           <div className="col-9">
             <div className="row">
-              <div className="col-6 mb-4">
-                <BlogCard />
-              </div>
-              <div className="col-6 mb-4">
-                <BlogCard />
-              </div>
-              <div className="col-6 mb-4">
-                <BlogCard />
-              </div>
               <div className="col-6 mb-4">
                 <BlogCard />
               </div>
