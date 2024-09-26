@@ -41,7 +41,7 @@ const Blog = () => {
           </div>
           <div className="col-9">
             <div className="row">
-              {!blogState === " " ? blogState.map((item, index) => {
+              {/* {!blogState === " " ? blogState.map((item, index) => {
                 return (
                   <div className="col-6 mb-3" key={index}>
                     <BlogCard 
@@ -52,7 +52,23 @@ const Blog = () => {
                     />
                   </div>
                 );
-              }): ""}
+              }): ""} */}
+              {blogState && blogState.length > 0 ? (
+                blogState.map((item, index) => {
+                  return (
+                    <div className="col-6 mb-3" key={index}>
+                      <BlogCard
+                        id={item?._id}
+                        title={item?.title}
+                        description={item?.description}
+                        image={item?.images[0]?.url}
+                      />
+                    </div>
+                  );
+                })
+              ) : (
+                <p>No blogs available</p>
+              )}
             </div>
           </div>
         </div>
