@@ -52,20 +52,21 @@ const BlogCard = (props) => {
   console.log("Image prop:", image);
 
   // Check if the URL is valid (it could be blob or normal URL)
-  const isValidUrl = (url) => {
-    try {
-      return typeof url === 'string' && (url.startsWith('blob:') || url.startsWith('http'));
-    } catch (e) {
-      return false;
-    }
-  };
+  // const isValidUrl = (url) => {
+  //   try {
+  //     return typeof url === 'string' && (url.startsWith('blob:') || url.startsWith('http'));
+  //   } catch (e) {
+  //     return false;
+  //   }
+  // };
 
   return (
     <div className="blog-card">
       <div className="card-image">
         {/* Check if the image is valid, otherwise use fallback */}
         <img 
-          src={image && image !== "" && isValidUrl(image) ? image : blog} 
+          // src={image && image !== "" && isValidUrl(image) ? image : blog}
+           src={image && image !== "" ? image : blog} 
           className="img-fluid w-100" 
           alt="blog" 
         />

@@ -5,6 +5,7 @@ import BlogCard from "../components/BlogCard";
 import Container from "../components/Container";
 import { getAllBlogs } from "../features/blog/blogSlice";
 import { useDispatch, useSelector } from "react-redux";
+import moment from "moment";
 
 const Blog = () => {
   const blogState = useSelector((state) => state?.blog?.blog);
@@ -62,6 +63,7 @@ const Blog = () => {
                         title={item?.title}
                         description={item?.description}
                         image={item?.images[0]?.url}
+                        date={moment(item?.createdAt).format('MMMM Do YYYY, h:mm a')}
                       />
                     </div>
                   );
