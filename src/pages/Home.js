@@ -9,7 +9,7 @@
 
 // export default Home;
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import BlogCard from "../components/BlogCard";
@@ -34,9 +34,22 @@ import brand5 from "../images/brand-05.png";
 import brand6 from "../images/brand-06.png";
 import brand7 from "../images/brand-07.png";
 import brand8 from "../images/brand-08.png";
-
+import { getAllBlogs } from "../features/blog/blogSlice";
+import { useDispatch, useSelector } from "react-redux";
+import moment from "moment";
 
 const Home = () => {
+
+  const blogState = useSelector((state) => state?.blog?.blog);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    getBlogs();
+  }, []);
+  const getBlogs = () => {
+    dispatch(getAllBlogs());
+  };
+  console.log(blogState);
+
   return (
     <>
       <Container class1="home-wrapper-1 py-5">
@@ -341,20 +354,27 @@ const Home = () => {
               <h3 className="section-heading">Our Latest Blogs</h3>
             </div>
           </div>
-          <div className="row">
-            <div className="col-3">
-              <BlogCard />
+           <div className="row">
+              {blogState && blogState.length > 0 ? (
+                blogState.map((item, index) => {
+                  if (index < 3) {
+                    return (
+                    <div className="col-3" key={index}>
+                      <BlogCard
+                        id={item?._id}
+                        title={item?.title}
+                        description={item?.description}
+                        image={item?.images[0]?.url}
+                        date={moment(item?.createdAt).format('MMMM Do YYYY, h:mm a')}
+                      />
+                    </div>
+                  );
+                 }
+                })
+              ) : (
+                <p>No blogs available</p>
+              )}
             </div>
-            <div className="col-3">
-              <BlogCard />
-            </div>
-            <div className="col-3">
-              <BlogCard />
-            </div>
-            <div className="col-3">
-              <BlogCard />
-            </div>
-          </div>
       </Container>
     </>
   );
