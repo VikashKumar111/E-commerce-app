@@ -9,6 +9,14 @@ export const getAllBlogs = createAsyncThunk("blog/get", async (thunkAPI) => {
   }
 });
 
+export const getABlog = createAsyncThunk("blog/get", async (id,thunkAPI) => {
+  try {
+    return await blogService.getBlog(id);
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error);
+  }
+});
+
 const initialState = {
   blog: "",
   isError: false,
