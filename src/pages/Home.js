@@ -37,17 +37,37 @@ import brand8 from "../images/brand-08.png";
 import { getAllBlogs } from "../features/blog/blogSlice";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
+import { addToWishlist, getAllProducts } from "../features/products/productSlice";
+import prodcompare from "../images/prodcompare.svg";
+import view from "../images/view.svg";
+import addcart from "../images/add-cart.svg";
+import wish from "../images/wish.svg";
+// import watch from "../images/watch.jpg";
+import watch2 from "../images/watch2.jpg";
+import ReactStars from "react-rating-stars-component";
+
 
 const Home = () => {
+  const productState = useSelector((state) => state.product.product);
 
   const blogState = useSelector((state) => state?.blog?.blog);
   const dispatch = useDispatch();
   useEffect(() => {
     getBlogs();
+    getProducts();
   }, []);
   const getBlogs = () => {
     dispatch(getAllBlogs());
   };
+
+  const getProducts = () => {
+    dispatch(getAllProducts());
+  };
+
+  const addToWish = (id) => {
+    dispatch(addToWishlist(id));
+  }
+
   console.log(blogState);
 
   return (
@@ -230,151 +250,223 @@ const Home = () => {
         </div>
       </Container>
       <Container class1="home-wrapper-2 py-5">
-          <div className="row">
-            <div className="col-3">
-              <div className="famous-card position-relative">
-                <img
-                  src={watch}
-                  className="img-fluid"
-                  alt="famous"
-                />
-                <div className="famous-content position-absolute">
-                  <h5>Big Screen</h5>
-                  <h6>Smart Watch Series 7</h6>
-                  <p>From $500 to $5000</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-3">
-              <div className="famous-card position-relative">
-                <img
-                  src={watch}
-                  className="img-fluid"
-                  alt="famous"
-                />
-                <div className="famous-content position-absolute ">
-                  <h5>Big Screen</h5>
-                  <h6>Smart Watch Series 7</h6>
-                  <p>From $500 to $5000</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-3">
-              <div className="famous-card position-relative">
-                <img
-                  src={watch}
-                  className="img-fluid"
-                  alt="famous"
-                />
-                <div className="famous-content position-absolute ">
-                  <h5>Big Screen</h5>
-                  <h6>Smart Watch Series 7</h6>
-                  <p>From $500 to $5000</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-3">
-              <div className="famous-card position-relative">
-                <img
-                  src={watch}
-                  className="img-fluid"
-                  alt="famous"
-                />
-                <div className="famous-content position-absolute ">
-                  <h5>Big Screen</h5>
-                  <h6>Smart Watch Series 7</h6>
-                  <p>From $500 to $5000</p>
-                </div>
+        <div className="row">
+          <div className="col-3">
+            <div className="famous-card position-relative">
+              <img src={watch} className="img-fluid" alt="famous" />
+              <div className="famous-content position-absolute">
+                <h5>Big Screen</h5>
+                <h6>Smart Watch Series 7</h6>
+                <p>From $500 to $5000</p>
               </div>
             </div>
           </div>
+          <div className="col-3">
+            <div className="famous-card position-relative">
+              <img src={watch} className="img-fluid" alt="famous" />
+              <div className="famous-content position-absolute ">
+                <h5>Big Screen</h5>
+                <h6>Smart Watch Series 7</h6>
+                <p>From $500 to $5000</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-3">
+            <div className="famous-card position-relative">
+              <img src={watch} className="img-fluid" alt="famous" />
+              <div className="famous-content position-absolute ">
+                <h5>Big Screen</h5>
+                <h6>Smart Watch Series 7</h6>
+                <p>From $500 to $5000</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-3">
+            <div className="famous-card position-relative">
+              <img src={watch} className="img-fluid" alt="famous" />
+              <div className="famous-content position-absolute ">
+                <h5>Big Screen</h5>
+                <h6>Smart Watch Series 7</h6>
+                <p>From $500 to $5000</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </Container>
       <Container class1="special-wrapper py-5 home-wrapper-2">
         <div className="row">
-            <div className="col-12">
-              <h3 className="section-heading">Special Products</h3>
-            </div>
-            <div className="row">
-              <SpecialProduct />
-              <SpecialProduct />
-              <SpecialProduct />
-            </div>
+          <div className="col-12">
+            <h3 className="section-heading">Special Products</h3>
           </div>
+          <div className="row">
+            {productState &&
+              productState.map((item, index) => {
+                if (item.tags === "special") {
+                  return (
+                    <SpecialProduct
+                      key={index}
+                      item={item?.brand}
+                      title={item?.title}
+                      totalrating={item?.totalrating.toString()}
+                      price={item?.price}
+                      sold={item?.sold}
+                      quantity={item?.quantity}
+                    />
+                  );
+                }
+              })}
+            {/* <SpecialProduct />
+              <SpecialProduct />
+              <SpecialProduct /> */}
+          </div>
+        </div>
       </Container>
       <Container class1="popular-wrapper py-5 home-wrapper-2">
         <div className="row">
-            <div className="col-12">
-              <h3 className="section-heading">Our Popular Products</h3>
-            </div>
-            <div className="row">
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-            </div>
+          <div className="col-12">
+            <h3 className="section-heading">Our Popular Products</h3>
           </div>
+          <div className="row">
+            {productState &&
+              productState.map((item, index) => {
+                if (item.tags === "popular") {
+                  return (
+                    <div
+                      key={index}
+                      className={"col-3 mb-4"}
+                    >
+                      <Link
+                        // to={`${
+                        //   location.pathname === "/"
+                        //     ? "/product/:id"
+                        //     : location.pathname === "/product/:id"
+                        //     ? "/product/1"
+                        //     : ":id"
+                        // }`}
+                        className="product-card position-relative"
+                      >
+                        <div className="wishlist-icon position-absolute">
+                          <button
+                            className="border-0 bg-transparent"
+                            onClick={(e) => addToWish(item._id)}
+                          >
+                            <img src={wish} alt="wishlist" />
+                          </button>
+                        </div>
+                        <div className="product-image">
+                          <img
+                            src={item?.images[0].url}
+                            className="img-fluid"
+                            alt="product"
+                          />
+                          <img
+                            src={watch2}
+                            className="img-fluid"
+                            alt="product "
+                          />
+                        </div>
+                        <div className="product-details">
+                          <h6 className="brand">{item?.brand}</h6>
+                          <h5 className="product-title">{item?.title}</h5>
+                          <ReactStars
+                            count={5}
+                            size={24}
+                            value={item?.totalrating}
+                            edit={false}
+                            activeColor="#ffd700"
+                          />
+                          {/* <p
+                            className={`description ${
+                              grid === 12 ? "d-block " : "d-none"
+                            }`}
+                            dangerouslySetInnerHTML={{
+                              __html: item?.description,
+                            }}
+                          ></p> */}
+                          <p className="price">$ {item?.price}</p>
+                        </div>
+                        <div className="action-bar position-absolute d-flex flex-column gap-15">
+                          <button className="border-0 bg-transparent">
+                            <img src={prodcompare} alt="compare" />
+                          </button>
+                          <button className="border-0 bg-transparent">
+                            <img src={view} alt="view" />
+                          </button>
+                          <button className="border-0 bg-transparent">
+                            <img src={addcart} alt="addcart" />
+                          </button>
+                        </div>
+                      </Link>
+                    </div>
+                  );
+                }
+              })}
+          </div>
+        </div>
       </Container>
       <Container class1="marque-wrapper py-5 home-wrapper-2">
-         <div className="row">
-            <div className="col-12">
-              <div className="marque-inner-wrapper card-wrapper">
-                <Marquee>
-                  <div className="mx-4 w-25">
-                    <img src={brand1} alt="brand" />
-                  </div>
-                  <div className="mx-4 w-25">
-                    <img src={brand2} alt="brand" />
-                  </div>
-                  <div className="mx-4 w-25">
-                    <img src={brand3} alt="brand" />
-                  </div>
-                  <div className="mx-4 w-25">
-                    <img src={brand4} alt="brand" />
-                  </div>
-                  <div className="mx-4 w-25">
-                    <img src={brand5} alt="brand" />
-                  </div>
-                  <div className="mx-4 w-25">
-                    <img src={brand6} alt="brand" />
-                  </div>
-                  <div className="mx-4 w-25">
-                    <img src={brand7} alt="brand" />
-                  </div>
-                  <div className="mx-4 w-25">
-                    <img src={brand8} alt="brand" />
-                  </div>
-                </Marquee>
-              </div>
+        <div className="row">
+          <div className="col-12">
+            <div className="marque-inner-wrapper card-wrapper">
+              <Marquee>
+                <div className="mx-4 w-25">
+                  <img src={brand1} alt="brand" />
+                </div>
+                <div className="mx-4 w-25">
+                  <img src={brand2} alt="brand" />
+                </div>
+                <div className="mx-4 w-25">
+                  <img src={brand3} alt="brand" />
+                </div>
+                <div className="mx-4 w-25">
+                  <img src={brand4} alt="brand" />
+                </div>
+                <div className="mx-4 w-25">
+                  <img src={brand5} alt="brand" />
+                </div>
+                <div className="mx-4 w-25">
+                  <img src={brand6} alt="brand" />
+                </div>
+                <div className="mx-4 w-25">
+                  <img src={brand7} alt="brand" />
+                </div>
+                <div className="mx-4 w-25">
+                  <img src={brand8} alt="brand" />
+                </div>
+              </Marquee>
             </div>
           </div>
+        </div>
       </Container>
       <Container class1="blog-wrapper py-5 home-wrapper-2">
         <div className="row">
-            <div className="col-12">
-              <h3 className="section-heading">Our Latest Blogs</h3>
-            </div>
+          <div className="col-12">
+            <h3 className="section-heading">Our Latest Blogs</h3>
           </div>
-           <div className="row">
-              {blogState && blogState.length > 0 ? (
-                blogState.map((item, index) => {
-                  if (index < 3) {
-                    return (
-                    <div className="col-3" key={index}>
-                      <BlogCard
-                        id={item?._id}
-                        title={item?.title}
-                        description={item?.description}
-                        image={item?.images[0]?.url}
-                        date={moment(item?.createdAt).format('MMMM Do YYYY, h:mm a')}
-                      />
-                    </div>
-                  );
-                 }
-                })
-              ) : (
-                <p>No blogs available</p>
-              )}
-            </div>
+        </div>
+        <div className="row">
+          {blogState && blogState.length > 0 ? (
+            blogState.map((item, index) => {
+              if (index < 3) {
+                return (
+                  <div className="col-3" key={index}>
+                    <BlogCard
+                      id={item?._id}
+                      title={item?.title}
+                      description={item?.description}
+                      image={item?.images[0]?.url}
+                      date={moment(item?.createdAt).format(
+                        "MMMM Do YYYY, h:mm a"
+                      )}
+                    />
+                  </div>
+                );
+              }
+            })
+          ) : (
+            <p>No blogs available</p>
+          )}
+        </div>
       </Container>
     </>
   );
