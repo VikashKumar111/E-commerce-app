@@ -370,6 +370,7 @@ const Home = () => {
                 if (item.tags === "special") {
                   return (
                     <SpecialProduct
+                      id={item?._id}
                       key={index}
                       item={item?.brand}
                       title={item?.title}
