@@ -10,7 +10,7 @@
 // export default Home;
 
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import BlogCard from "../components/BlogCard";
 import ProductCard from "../components/ProductCard";
@@ -52,6 +52,7 @@ const Home = () => {
 
   const blogState = useSelector((state) => state?.blog?.blog);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   useEffect(() => {
     getBlogs();
     getProducts();
@@ -300,7 +301,7 @@ const Home = () => {
                             <img src={prodcompare} alt="compare" />
                           </button>
                           <button className="border-0 bg-transparent">
-                            <img src={view} alt="view" />
+                            <img onClick={()=>navigate("/product/"+item?._id)} src={view} alt="view" />
                           </button>
                           <button className="border-0 bg-transparent">
                             <img src={addcart} alt="addcart" />
@@ -445,7 +446,7 @@ const Home = () => {
                             <img src={prodcompare} alt="compare" />
                           </button>
                           <button className="border-0 bg-transparent">
-                            <img src={view} alt="view" />
+                            <img onClick={()=>navigate("/product/"+item?._id)} src={view} alt="view" />
                           </button>
                           <button className="border-0 bg-transparent">
                             <img src={addcart} alt="addcart" />
