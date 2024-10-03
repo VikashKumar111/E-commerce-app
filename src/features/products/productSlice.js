@@ -82,7 +82,21 @@ export const productSlice = createSlice({
         state.isSuccess = false;
         // state.message = action.error.message  || "Something went wrong";
         state.error = action.payload || 'Failed to add to wishlist';
-      });
+      }).addCase(getAProduct.pending, (state) => {
+        state.isLoading = true;
+      }).addCase(getAProduct.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.isError = false;
+        state.singleProduct = action.payload;
+        state.message = "Product Fetched Successfully";
+      }).addCase(getAProduct.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.isSuccess = false;
+        state.message = action.error;
+      })
+      ;
   },
 });
 
