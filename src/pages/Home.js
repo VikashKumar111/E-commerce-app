@@ -252,14 +252,7 @@ const Home = () => {
                       key={index}
                       className={"col-3 mb-4"}
                     >
-                      <Link
-                        // to={`${
-                        //   location.pathname === "/"
-                        //     ? "/product/:id"
-                        //     : location.pathname === "/product/:id"
-                        //     ? "/product/1"
-                        //     : ":id"
-                        // }`}
+                      <div
                         className="product-card position-relative"
                       >
                         <div className="wishlist-icon position-absolute">
@@ -313,7 +306,7 @@ const Home = () => {
                             <img src={addcart} alt="addcart" />
                           </button>
                         </div>
-                      </Link>
+                      </div>
                     </div>
                   );
                 }
@@ -404,14 +397,7 @@ const Home = () => {
                       key={index}
                       className={"col-3 mb-4"}
                     >
-                      <Link
-                        // to={`${
-                        //   location.pathname === "/"
-                        //     ? "/product/:id"
-                        //     : location.pathname === "/product/:id"
-                        //     ? "/product/1"
-                        //     : ":id"
-                        // }`}
+                      <div
                         className="product-card position-relative"
                       >
                         <div className="wishlist-icon position-absolute">
@@ -465,7 +451,7 @@ const Home = () => {
                             <img src={addcart} alt="addcart" />
                           </button>
                         </div>
-                      </Link>
+                      </div>
                     </div>
                   );
                 }
