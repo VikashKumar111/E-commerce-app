@@ -13,7 +13,6 @@ import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import BlogCard from "../components/BlogCard";
-import ProductCard from "../components/ProductCard";
 import SpecialProduct from "../components/SpecialProduct";
 import Container from "../components/Container";
 import { service } from "../utils/Data";
@@ -56,7 +55,7 @@ const Home = () => {
   useEffect(() => {
     getBlogs();
     getProducts();
-  }, []);
+  });
   const getBlogs = () => {
     dispatch(getAllBlogs());
   };
@@ -286,14 +285,6 @@ const Home = () => {
                             edit={false}
                             activeColor="#ffd700"
                           />
-                          {/* <p
-                            className={`description ${
-                              grid === 12 ? "d-block " : "d-none"
-                            }`}
-                            dangerouslySetInnerHTML={{
-                              __html: item?.description,
-                            }}
-                          ></p> */}
                           <p className="price">$ {item?.price}</p>
                         </div>
                         <div className="action-bar position-absolute d-flex flex-column gap-15">

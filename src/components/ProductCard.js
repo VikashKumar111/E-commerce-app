@@ -74,9 +74,9 @@ const ProductCard = (props) => {
                 <button className="border-0 bg-transparent">
                   <img src={prodcompare} alt="compare" />
                 </button>
-                <button className="border-0 bg-transparent">
-                  <img src={view} alt="view" />
-                </button>
+                <Link style={{paddingLeft:"6px"}} className="border-0 bg-transparent" to={"/product/"+item?._id}>
+                  <img src={view}  alt="view" />
+                </Link>
                 <button className="border-0 bg-transparent">
                   <img src={addcart} alt="addcart" />
                 </button>
