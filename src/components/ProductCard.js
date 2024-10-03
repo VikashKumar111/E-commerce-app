@@ -30,7 +30,7 @@ const ProductCard = (props) => {
               location.pathname === "/product" ? `gr-${grid}` : "col-3 mb-4"
             }`}
           >
-            <Link
+            <div
               // to={`${
               //   location.pathname === "/"
               //     ? "/product/:id"
@@ -81,7 +81,7 @@ const ProductCard = (props) => {
                   <img src={addcart} alt="addcart" />
                 </button>
               </div>
-            </Link>
+            </div>
           </div>
         );
       })}

@@ -55,7 +55,7 @@ const Home = () => {
   useEffect(() => {
     getBlogs();
     getProducts();
-  });
+  },[]);
   const getBlogs = () => {
     dispatch(getAllBlogs());
   };
@@ -281,7 +281,7 @@ const Home = () => {
                           <ReactStars
                             count={5}
                             size={24}
-                            value={item?.totalrating}
+                            value={item?.totalrating.toString()}
                             edit={false}
                             activeColor="#ffd700"
                           />

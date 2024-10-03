@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 import ProductCard from "../components/ProductCard";
@@ -8,8 +8,19 @@ import Color from "../components/Color";
 import { TbGitCompare } from "react-icons/tb";
 import { AiOutlineHeart } from "react-icons/ai";
 import Container from "../components/Container";
+import { useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { getAProduct } from "../features/products/productSlice";
 
 const SingleProduct = () => {
+  const location = useLocation();
+  const productId = location.pathname.split("/")[2];
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAProduct(productId));
+  }, []);
+  
   const props = {
     width: 400,
     height: 600,
@@ -43,24 +54,28 @@ const SingleProduct = () => {
             <div className="other-product-images d-flex flex-wrap gap-15">
               <div>
                 <img
+                  alt="product"
                   className="img-fluid"
                   src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0Y2h8ZW58MHx8MHx8fDA%3D"
                 />
               </div>
               <div>
                 <img
+                  alt="product"
                   className="img-fluid"
                   src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0Y2h8ZW58MHx8MHx8fDA%3D"
                 />
               </div>
               <div>
                 <img
+                  alt="product"
                   className="img-fluid"
                   src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0Y2h8ZW58MHx8MHx8fDA%3D"
                 />
               </div>
               <div>
                 <img
+                  alt="product"
                   className="img-fluid"
                   src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0Y2h8ZW58MHx8MHx8fDA%3D"
                 />
