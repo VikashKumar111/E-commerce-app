@@ -9,18 +9,23 @@ import { TbGitCompare } from "react-icons/tb";
 import { AiOutlineHeart } from "react-icons/ai";
 import Container from "../components/Container";
 import { useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getAProduct } from "../features/products/productSlice";
 
 const SingleProduct = () => {
   const location = useLocation();
   const productId = location.pathname.split("/")[2];
   const dispatch = useDispatch();
+  
 
   useEffect(() => {
     dispatch(getAProduct(productId));
   }, []);
+
+  const productState = useSelector((state) => state?.product?.singleProduct);
+  console.log(productState);
   
+
   const props = {
     width: 400,
     height: 600,
@@ -86,11 +91,11 @@ const SingleProduct = () => {
             <div className="main-product-details">
               <div className="border-bottom">
                 <h3 className="title">
-                  Kids headphones bulk 10 pack multi colored for students
+                  {productState?.title}
                 </h3>
               </div>
               <div className="border-bottom py-3">
-                <p>$ 100</p>
+                <p>$ {productState?.price}</p>
                 <div className="d-flex align-items-center gap-10">
                   <ReactStars
                     count={5}
@@ -112,15 +117,15 @@ const SingleProduct = () => {
                 </div>
                 <div className="d-flex gap-10 align-items-center my-2">
                   <h3 className="product-heading">Brand :</h3>
-                  <p className="product-data">Havells</p>
+                  <p className="product-data">{productState?.brand}</p>
                 </div>
                 <div className="d-flex gap-10 align-items-center my-2">
                   <h3 className="product-heading">Category :</h3>
-                  <p className="product-data">Watch</p>
+                  <p className="product-data">{productState?.category}</p>
                 </div>
                 <div className="d-flex gap-10 align-items-center my-2">
                   <h3 className="product-heading">Tags :</h3>
-                  <p className="product-data">Watch</p>
+                  <p className="product-data">{productState?.tags}</p>
                 </div>
                 <div className="d-flex gap-10 align-items-center my-2">
                   <h3 className="product-heading">Availabilty :</h3>
@@ -203,6 +208,17 @@ const SingleProduct = () => {
           </div>
         </div>
       </Container>
+      <Container class1="description-wrapper py-5 home-wrapper-2">
+        <div className="row">
+          <div className="col-12">
+            <h4>Description</h4>
+            <div className="bg-white p-3">
+              <p dangerouslySetInnerHTML={{ __html: productState?.description}}>
+              </p>
+            </div>
+          </div>
+        </div>
+      </Container>
       <Container id="review" class1="review-wrapper home-wrapper-2">
         <div className="row">
           <div className="col-12">
@@ -215,7 +231,7 @@ const SingleProduct = () => {
                     <ReactStars
                       count={5}
                       size={24}
-                      value={3}
+                      value={productState?.totalrating.toString()}
                       edit={false}
                       activeColor="#ffd700"
                     />
@@ -279,22 +295,6 @@ const SingleProduct = () => {
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </Container>
-      <Container class1="description-wrapper py-5 home-wrapper-2">
-        <div className="row">
-          <div className="col-12">
-            <h4>Description</h4>
-            <div className="bg-white p-3">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed
-                nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis
-                ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
-                Mauris massa. Vestibulum lacinia arcu eget nulla.
-              </p>
             </div>
           </div>
         </div>
