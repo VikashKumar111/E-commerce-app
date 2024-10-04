@@ -16,7 +16,6 @@ const SingleProduct = () => {
   const location = useLocation();
   const productId = location.pathname.split("/")[2];
   const dispatch = useDispatch();
-  
 
   useEffect(() => {
     dispatch(getAProduct(productId));
@@ -24,14 +23,16 @@ const SingleProduct = () => {
 
   const productState = useSelector((state) => state?.product?.singleProduct);
   console.log(productState);
-  
 
   const props = {
     width: 400,
     height: 600,
     zoomWidth: 600,
-    img: "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0Y2h8ZW58MHx8MHx8fDA%3D",
+    img: productState?.images?.[0]?.url
+      ? productState.images[0].url
+      : "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0Y2h8ZW58MHx8MHx8fDA%3D",
   };
+  console.log(productState?.images?.[0]?.url ? productState.images[0].url : "");
   const [orderedProduct, setOrderedProduct] = useState(true);
 
   const copyToClipboard = (text) => {
@@ -57,42 +58,21 @@ const SingleProduct = () => {
               </div>
             </div>
             <div className="other-product-images d-flex flex-wrap gap-15">
-              <div>
-                <img
-                  alt="product"
-                  className="img-fluid"
-                  src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0Y2h8ZW58MHx8MHx8fDA%3D"
-                />
-              </div>
-              <div>
-                <img
-                  alt="product"
-                  className="img-fluid"
-                  src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0Y2h8ZW58MHx8MHx8fDA%3D"
-                />
-              </div>
-              <div>
-                <img
-                  alt="product"
-                  className="img-fluid"
-                  src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0Y2h8ZW58MHx8MHx8fDA%3D"
-                />
-              </div>
-              <div>
-                <img
-                  alt="product"
-                  className="img-fluid"
-                  src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0Y2h8ZW58MHx8MHx8fDA%3D"
-                />
-              </div>
+              {productState?.images.map((item, index) => {
+                return (
+                  <img
+                    alt="product"
+                    className="img-fluid"
+                    src={item?.url}
+                  />
+                );
+              })}
             </div>
           </div>
           <div className="col-6">
             <div className="main-product-details">
               <div className="border-bottom">
-                <h3 className="title">
-                  {productState?.title}
-                </h3>
+                <h3 className="title">{productState?.title}</h3>
               </div>
               <div className="border-bottom py-3">
                 <p>$ {productState?.price}</p>
@@ -100,7 +80,7 @@ const SingleProduct = () => {
                   <ReactStars
                     count={5}
                     size={24}
-                    value={3}
+                    value={productState?.totalrating}
                     edit={false}
                     activeColor="#ffd700"
                   />
@@ -201,7 +181,9 @@ const SingleProduct = () => {
                         "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2F0Y2h8ZW58MHx8MHx8fDA%3D"
                       );
                     }}
-                  >Copy Product Link</a>
+                  >
+                    Copy Product Link
+                  </a>
                 </div>
               </div>
             </div>
@@ -213,8 +195,9 @@ const SingleProduct = () => {
           <div className="col-12">
             <h4>Description</h4>
             <div className="bg-white p-3">
-              <p dangerouslySetInnerHTML={{ __html: productState?.description}}>
-              </p>
+              <p
+                dangerouslySetInnerHTML={{ __html: productState?.description }}
+              ></p>
             </div>
           </div>
         </div>
@@ -231,7 +214,7 @@ const SingleProduct = () => {
                     <ReactStars
                       count={5}
                       size={24}
-                      value={productState?.totalrating.toString()}
+                      value={productState?.totalrating}
                       edit={false}
                       activeColor="#ffd700"
                     />
