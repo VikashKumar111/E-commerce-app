@@ -35,6 +35,17 @@ export const getUserProductWishlist = createAsyncThunk(
   }
 );
 
+export const addToCart = createAsyncThunk(
+  "user/cart/add",
+  async (cartData, thunkAPI) => {
+    try {
+      return await authService.addToCart(cartData);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+)
+
 const getCustomerFromLocalStorage = localStorage.getItem("customer")
   ? JSON.parse(localStorage.getItem("customer"))
   : '';
