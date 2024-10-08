@@ -75,9 +75,32 @@ const addToCart = async (cartData) => {
   }
 }
 
+const getCart = async () => {
+   // Retrieve the token from localStorage
+    const token = localStorage.getItem("Token");
+
+    console.log("Token retrieved from localStorage:", token);
+
+    // If the token exists, include it in the headers
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    };
+    
+    // Log the config object to see what it's passing in the request
+    console.log("Config object:", config);
+  const response =  await axios.get(`${base_url}user/cart`, config);
+  if (response.data) {
+    return response.data;
+  }
+}
+
 export const authService = {
   register,
   login,
   getUserWishlist,
   addToCart,
+  getCart,
 };
