@@ -1,0 +1,100 @@
+Date : 2024-10-07 16:14:04
+Directory : e:\Edugyan\2 ongoing\BME\frontend\src
+Total : 63 files,  4280 codes, 166 comments, 377 blanks, all 4823 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |         44 |      3,303 |        121 |        214 |      3,638 |
+| CSS        |          1 |        722 |         44 |        163 |        929 |
+| XML        |         18 |        255 |          1 |          0 |        256 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                      | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                         |         63 |      4,280 |        166 |        377 |      4,823 |
+| . (Files)                                                                 |          3 |        788 |         44 |        168 |      1,000 |
+| app                                                                       |          1 |         13 |          0 |          2 |         15 |
+| components                                                                |         12 |        544 |         54 |         47 |        645 |
+| features                                                                  |          8 |        492 |         28 |         65 |        585 |
+| features\blog                                                             |          2 |         81 |          0 |         11 |         92 |
+| features\contact                                                          |          2 |         65 |          0 |          9 |         74 |
+| features\products                                                         |          2 |        150 |         20 |         21 |        191 |
+| features\user                                                             |          2 |        196 |          8 |         24 |        228 |
+| images                                                                    |         18 |        255 |          1 |          0 |        256 |
+| pages                                                                     |         19 |      2,149 |         38 |         89 |      2,276 |
+| utils                                                                     |          2 |         39 |          1 |          6 |         46 |
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                  | language   | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| e:\Edugyan\2 ongoing\BME\frontend\src\App.css                             | CSS        |        722 |         44 |        163 |        929 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\App.js                              | JavaScript |         55 |          0 |          3 |         58 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\app\store.js                        | JavaScript |         13 |          0 |          2 |         15 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\components\Banner.js                | JavaScript |         27 |          0 |          2 |         29 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\components\BlogCard.js              | JavaScript |         28 |         45 |         14 |         87 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\components\BreadCrumb.js            | JavaScript |         19 |          0 |          3 |         22 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\components\Color.js                 | JavaScript |         14 |          0 |          3 |         17 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\components\Container.js             | JavaScript |          9 |          0 |          3 |         12 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\components\CustomInput.js           | JavaScript |         18 |          0 |          3 |         21 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\components\Footer.js                | JavaScript |        107 |          0 |          2 |        109 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\components\Header.js                | JavaScript |        146 |          0 |          3 |        149 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\components\Layout.js                | JavaScript |         28 |          0 |          3 |         31 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\components\Meta.js                  | JavaScript |         11 |          0 |          4 |         15 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\components\ProductCard.js           | JavaScript |         79 |          9 |          5 |         93 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\components\SpecialProduct.js        | JavaScript |         58 |          0 |          2 |         60 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\features\blog\blogService.js        | JavaScript |         18 |          0 |          4 |         22 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\features\blog\blogSlice.js          | JavaScript |         63 |          0 |          7 |         70 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\features\contact\contactService.js  | JavaScript |         13 |          0 |          4 |         17 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\features\contact\contactSlice.js    | JavaScript |         52 |          0 |          5 |         57 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\features\products\productService.js | JavaScript |         56 |         18 |         12 |         86 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\features\products\productSlice.js   | JavaScript |         94 |          2 |          9 |        105 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\features\user\userService.js        | JavaScript |         61 |          8 |         15 |         84 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\features\user\userSlice.js          | JavaScript |        135 |          0 |          9 |        144 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\images\add-cart.svg                 | XML        |          5 |          0 |          0 |          5 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\images\arrow.svg                    | XML        |          1 |          0 |          0 |          1 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\images\cart.svg                     | XML        |         67 |          0 |          0 |         67 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\images\compare.svg                  | XML        |         11 |          1 |          0 |         12 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\images\cross.svg                    | XML        |          3 |          0 |          0 |          3 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\images\del.svg                      | XML        |          4 |          0 |          0 |          4 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\images\gr.svg                       | XML        |          1 |          0 |          0 |          1 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\images\gr2.svg                      | XML        |          1 |          0 |          0 |          1 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\images\gr3.svg                      | XML        |          1 |          0 |          0 |          1 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\images\gr4.svg                      | XML        |          1 |          0 |          0 |          1 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\images\img-zoom.svg                 | XML        |         30 |          0 |          0 |         30 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\images\menu.svg                     | XML        |         23 |          0 |          0 |         23 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\images\prodcompare.svg              | XML        |          1 |          0 |          0 |          1 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\images\user.svg                     | XML        |          7 |          0 |          0 |          7 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\images\view.svg                     | XML        |         48 |          0 |          0 |         48 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\images\wish-black.svg               | XML        |          4 |          0 |          0 |          4 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\images\wish.svg                     | XML        |         41 |          0 |          0 |         41 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\images\wishlist.svg                 | XML        |          6 |          0 |          0 |          6 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\index.js                            | JavaScript |         11 |          0 |          2 |         13 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\About.js                      | JavaScript |          7 |          0 |          3 |         10 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\Blog.js                       | JavaScript |         69 |         10 |          4 |         83 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\Cart.js                       | JavaScript |        108 |          0 |          3 |        111 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\Checkout.js                   | JavaScript |        154 |          0 |          3 |        157 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\CompareProduct.js             | JavaScript |        109 |          0 |          2 |        111 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\Contact.js                    | JavaScript |        153 |          0 |          4 |        157 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\Forgotpassword.js             | JavaScript |         38 |          0 |          4 |         42 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\Home.js                       | JavaScript |        497 |         15 |         12 |        524 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\Login.js                      | JavaScript |         81 |          0 |          5 |         86 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\OurStore.js                   | JavaScript |        256 |         12 |          8 |        276 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\PrivacyPolicy.js              | JavaScript |         29 |          0 |          3 |         32 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\RefundPolicy.js               | JavaScript |         29 |          0 |          3 |         32 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\Resetpassword.js              | JavaScript |         42 |          0 |          3 |         45 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\ShippingPolicy.js             | JavaScript |         29 |          0 |          3 |         32 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\Signup.js                     | JavaScript |        116 |          0 |          5 |        121 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\SingleBlog.js                 | JavaScript |         44 |          0 |          5 |         49 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\SingleProduct.js              | JavaScript |        292 |          0 |          8 |        300 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\TermsAndConditions.js         | JavaScript |         29 |          0 |          3 |         32 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\pages\Wishlist.js                   | JavaScript |         67 |          1 |          8 |         76 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\utils\Data.js                       | JavaScript |         27 |          0 |          1 |         28 |
+| e:\Edugyan\2 ongoing\BME\frontend\src\utils\axiosConfig.js                | JavaScript |         12 |          1 |          5 |         18 |
+| Total                                                                     |            |      4,280 |        166 |        377 |      4,823 |
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
