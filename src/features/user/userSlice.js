@@ -55,7 +55,18 @@ export const getUserCart = createAsyncThunk(
       return thunkAPI.rejectWithValue(error);
     }
   }
-)
+);
+
+export const deleteCartProduct = createAsyncThunk(
+  "user/cart/product/delete",
+  async (id, thunkAPI) => {
+    try {
+      return await authService.removeProductFromCart(id);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
 
 const getCustomerFromLocalStorage = localStorage.getItem("customer")
   ? JSON.parse(localStorage.getItem("customer"))
@@ -142,7 +153,7 @@ export const authSlice = createSlice({
         state.isSuccess = true;
         state.cartProduct = action.payload;
         if (state.isSuccess === true) {
-          toast.success("Product Added to Cart")
+          toast.success("Product Added to Cart");
         }
       })
       .addCase(addProdToCart.rejected, (state, action) => {
@@ -162,11 +173,25 @@ export const authSlice = createSlice({
       })
       .addCase(getUserCart.rejected, (state, action) => {
         state.isLoading = false;
-        state.isError=true;
+        state.isError = true;
         state.isSuccess = false;
         state.message = action.error;
-      }
-    );
+      })
+      .addCase(deleteCartProduct.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(deleteCartProduct.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isError = false;
+        state.isSuccess = true;
+        state.cartProducts = action.payload;
+      })
+      .addCase(deleteCartProduct.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.isSuccess = false;
+        state.message = action.error;
+      });
   },
 });
 
