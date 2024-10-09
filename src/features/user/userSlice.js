@@ -184,7 +184,7 @@ export const authSlice = createSlice({
         state.isLoading = false;
         state.isError = false;
         state.isSuccess = true;
-        state.cartProducts = action.payload;
+        state.deletedCartProduct = action.payload;
       })
       .addCase(deleteCartProduct.rejected, (state, action) => {
         state.isLoading = false;

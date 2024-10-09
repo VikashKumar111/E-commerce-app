@@ -69,7 +69,7 @@ const Cart = () => {
                         />
                       </div>
                       <div>
-                        <AiFillDelete className="text-danger" />
+                        <AiFillDelete onClick={()=>deleteACartProduct()}  className="text-danger" />
                       </div>
                     </div>
                     <div className="cart-col-4">
