@@ -54,6 +54,7 @@ const SingleProduct = () => {
           price: productState?.price,
         })
       );
+      navigate("/cart")
     }
   };
 
