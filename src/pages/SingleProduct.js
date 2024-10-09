@@ -12,7 +12,7 @@ import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAProduct } from "../features/products/productSlice";
 import { toast } from "react-toastify";
-import { addProdToCart } from "../features/user/userSlice";
+import { addProdToCart, getUserCart } from "../features/user/userSlice";
 
 const SingleProduct = () => {
   const [color, setColor] = useState(null);
@@ -24,9 +24,11 @@ const SingleProduct = () => {
 
   useEffect(() => {
     dispatch(getAProduct(productId));
+    dispatch(getUserCart());
   }, []);
 
   const productState = useSelector((state) => state?.product?.singleProduct);
+  const cartState = useSelector((state) => state.auth.cartProducts);
   console.log(productState);
 
   const uploadCart = () => {

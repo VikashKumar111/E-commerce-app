@@ -54,7 +54,7 @@ const Cart = () => {
                       </div>
                     </div>
                     <div className="cart-col-2">
-                      <h5 className="price">$ 100</h5>
+                      <h5 className="price">$ {item?.price}</h5>
                     </div>
                     <div className="cart-col-3 d-flex align-items-center gap-15">
                       <div>
@@ -65,6 +65,7 @@ const Cart = () => {
                           min={1}
                           max={10}
                           id=""
+                          value={item?.quantity}
                         />
                       </div>
                       <div>
@@ -72,7 +73,7 @@ const Cart = () => {
                       </div>
                     </div>
                     <div className="cart-col-4">
-                      <h5 className="price">$ 100</h5>
+                      <h5 className="price">$ {item?.price * item.quantity}</h5>
                     </div>
                   </div>
                 );
