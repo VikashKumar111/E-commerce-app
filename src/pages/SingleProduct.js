@@ -17,6 +17,7 @@ import { addProdToCart, getUserCart } from "../features/user/userSlice";
 const SingleProduct = () => {
   const [color, setColor] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const [alreadyAdded, setAlreadyAdded] = useState(false);
   console.log(quantity);
   const location = useLocation();
   const productId = location.pathname.split("/")[2];
@@ -31,12 +32,27 @@ const SingleProduct = () => {
   const cartState = useSelector((state) => state.auth.cartProducts);
   console.log(productState);
 
+  useEffect(() => {
+    for (let index = 0; index < cartState.length; index++) {
+      if (productId === cartState[index]?.productId?._id) {
+        setAlreadyAdded(true);
+      }
+    }
+  }, []);
+
   const uploadCart = () => {
     if (color === null) {
       toast.error("Please Choose Color");
       return false;
     } else {
-      dispatch(addProdToCart({productId:productState?._id,quantity,color,price:productState?.price}))
+      dispatch(
+        addProdToCart({
+          productId: productState?._id,
+          quantity,
+          color,
+          price: productState?.price,
+        })
+      );
     }
   };
 
@@ -140,27 +156,39 @@ const SingleProduct = () => {
                     </span>
                   </div>
                 </div>
-                <div className="d-flex gap-10 flex-column mt-2 mb-3">
-                  <h3 className="product-heading">Color :</h3>
-                  <Color setColor={setColor} colorData={productState?.color} />
-                </div>
+                {alreadyAdded === false && (
+                  <>
+                    <div className="d-flex gap-10 flex-column mt-2 mb-3">
+                      <h3 className="product-heading">Color :</h3>
+                      <Color
+                        setColor={setColor}
+                        colorData={productState?.color}
+                      />
+                    </div>
+                  </>
+                )}
+
                 <div className="d-flex align-items-center gap-15 flex-row mt-2 mb-3">
-                  <h3 className="product-heading">Quantity :</h3>
-                  <div className="">
-                    <input
-                      type="number"
-                      name=""
-                      min={1}
-                      max={10}
-                      className="form-control"
-                      style={{ width: "70px" }}
-                      id=""
-                      value={quantity}
-                      onChange={(e) => {
-                        setQuantity(e.target.value);
-                      }}
-                    />
-                  </div>
+                  {alreadyAdded === false && (
+                    <>
+                      <h3 className="product-heading">Quantity :</h3>
+                      <div className="">
+                        <input
+                          type="number"
+                          name=""
+                          min={1}
+                          max={10}
+                          className="form-control"
+                          style={{ width: "70px" }}
+                          id=""
+                          value={quantity}
+                          onChange={(e) => {
+                            setQuantity(e.target.value);
+                          }}
+                        />
+                      </div>
+                    </>
+                  )}
                   <div className="d-flex align-items-center gap-30 ms-5">
                     <button
                       onClick={() => {
@@ -169,19 +197,19 @@ const SingleProduct = () => {
                       type="submit"
                       className="button border-0"
                     >
-                      Add To Cart
+                      {alreadyAdded ? "Go to Cart" : "Add to Cart"}
                     </button>
                     <button className="button signup">Buy It Now</button>
                   </div>
                 </div>
                 <div className="d-flex align-items-center gap-15">
                   <div>
-                    <a href="">
+                    <a href="/">
                       <TbGitCompare className="fs-5 me-2" /> Add to Compare
                     </a>
                   </div>
                   <div>
-                    <a href="">
+                    <a href="/">
                       <AiOutlineHeart className="fs-5 me-2" /> Add to Wishlist
                     </a>
                   </div>
@@ -243,7 +271,7 @@ const SingleProduct = () => {
                 </div>
                 {orderedProduct && (
                   <div>
-                    <a className="text-dark text-decoration-underline" href="">
+                    <a className="text-dark text-decoration-underline" href="/">
                       Write a Review
                     </a>
                   </div>
