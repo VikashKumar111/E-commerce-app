@@ -8,7 +8,7 @@ import Color from "../components/Color";
 import { TbGitCompare } from "react-icons/tb";
 import { AiOutlineHeart } from "react-icons/ai";
 import Container from "../components/Container";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAProduct } from "../features/products/productSlice";
 import { toast } from "react-toastify";
@@ -20,6 +20,7 @@ const SingleProduct = () => {
   const [alreadyAdded, setAlreadyAdded] = useState(false);
   console.log(quantity);
   const location = useLocation();
+  const navigate = useNavigate();
   const productId = location.pathname.split("/")[2];
   const dispatch = useDispatch();
 
@@ -189,17 +190,23 @@ const SingleProduct = () => {
                       </div>
                     </>
                   )}
-                  <div className="d-flex align-items-center gap-30 ms-5">
+                  <div
+                    className={
+                      alreadyAdded
+                        ? "ms-0"
+                        : "ms-5" + "d-flex align-items-center gap-30 ms-5"
+                    }
+                  >
                     <button
                       onClick={() => {
-                        uploadCart();
+                        alreadyAdded ? navigate("/cart") : uploadCart();
                       }}
                       type="submit"
                       className="button border-0"
                     >
                       {alreadyAdded ? "Go to Cart" : "Add to Cart"}
                     </button>
-                    <button className="button signup">Buy It Now</button>
+                    {/* <button className="button signup">Buy It Now</button>*/}
                   </div>
                 </div>
                 <div className="d-flex align-items-center gap-15">
