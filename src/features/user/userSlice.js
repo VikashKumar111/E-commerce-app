@@ -185,12 +185,18 @@ export const authSlice = createSlice({
         state.isError = false;
         state.isSuccess = true;
         state.deletedCartProduct = action.payload;
+        if (state.isSuccess) {
+          toast.success("Product Deleted From Cart Successfuly!");
+        }
       })
       .addCase(deleteCartProduct.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.isSuccess = false;
         state.message = action.error;
+        if (state.isSuccess===false) {
+          toast.error("Something Went Wrong!");
+        }
       });
   },
 });

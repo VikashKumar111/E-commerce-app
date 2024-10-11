@@ -19,7 +19,7 @@ const Cart = () => {
 
   const deleteACartProduct = (id) => {
     dispatch(deleteCartProduct(id));
-  }
+  };
 
   return (
     <>
@@ -74,7 +74,7 @@ const Cart = () => {
                         />
                       </div>
                       <div>
-                        <AiFillDelete onClick={()=>deleteACartProduct()}  className="text-danger" />
+                        <AiFillDelete onClick={()=>deleteACartProduct(item?._id)}  className="text-danger" />
                       </div>
                     </div>
                     <div className="cart-col-4">
