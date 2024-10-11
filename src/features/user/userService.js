@@ -111,7 +111,35 @@ const removeProductFromCart = async (cartItemId) => {
 
   // Log the config object to see what it's passing in the request
   console.log("Config object:", config);
-  const response = await axios.delete(`${base_url}user/delete-product-cart/${cartItemId}`, config);
+  const response = await axios.delete(
+    `${base_url}user/delete-product-cart/${cartItemId}`,
+    config
+  );
+  if (response.data) {
+    return response.data;
+  }
+};
+
+const updateProductFromCart = async (cartDetail) => {
+  // Retrieve the token from localStorage
+  const token = localStorage.getItem("Token");
+
+  console.log("Token retrieved from localStorage:", token);
+
+  // If the token exists, include it in the headers
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  };
+
+  // Log the config object to see what it's passing in the request
+  console.log("Config object:", config);
+
+  const response = await axios.delete(
+    `${base_url}user/update-product-cart/${cartDetail.cartItemId}/${cartDetail.quantity}`
+  );
   if (response.data) {
     return response.data;
   }
@@ -124,4 +152,5 @@ export const authService = {
   addToCart,
   getCart,
   removeProductFromCart,
+  updateProductFromCart,
 };
