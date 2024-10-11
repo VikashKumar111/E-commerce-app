@@ -95,7 +95,7 @@ const getCart = async () => {
   }
 };
 
-const removeProductFromCart = async (id) => {
+const removeProductFromCart = async (cartItemId) => {
   // Retrieve the token from localStorage
   const token = localStorage.getItem("Token");
 
@@ -111,7 +111,7 @@ const removeProductFromCart = async (id) => {
 
   // Log the config object to see what it's passing in the request
   console.log("Config object:", config);
-  const response = await axios.delete(`${base_url}user/delete-product-cart`,{cartItemId:id}, config);
+  const response = await axios.delete(`${base_url}user/delete-product-cart/${cartItemId}`, config);
   if (response.data) {
     return response.data;
   }
