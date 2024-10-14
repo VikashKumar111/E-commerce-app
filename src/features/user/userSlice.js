@@ -82,7 +82,7 @@ export const updateCartProduct = createAsyncThunk(
       return thunkAPI.rejectWithValue(error);
     }
   }
-)
+);
 
 const getCustomerFromLocalStorage = localStorage.getItem("customer")
   ? JSON.parse(localStorage.getItem("customer"))
@@ -213,6 +213,21 @@ export const authSlice = createSlice({
         if (state.isSuccess===false) {
           toast.error("Something Went Wrong!");
         }
+      })
+      .addCase(updateCartProduct.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updateCartProduct.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isError = false;
+        state.isSuccess = true;
+        state.updatedCart = action.payload;
+      })
+      .addCase(updateCartProduct.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.isSuccess = false;
+        state.message = action.error;
       });
   },
 });
