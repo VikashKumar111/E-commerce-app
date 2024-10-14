@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Meta from "../components/Meta";
 import BreadCrumb from "../components/BreadCrumb";
 import watch from "../images/watch.jpg";
@@ -6,10 +6,11 @@ import { AiFillDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteCartProduct, getUserCart } from "../features/user/userSlice";
+import { deleteCartProduct, getUserCart, updateCartProduct } from "../features/user/userSlice";
 
 const Cart = () => {
   const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(null);
   const userCartState = useSelector((state) => state.auth.cartProducts);
 
   useEffect(() => {
@@ -20,6 +21,13 @@ const Cart = () => {
   const deleteACartProduct = (id) => {
     dispatch(deleteCartProduct(id));
   };
+
+  const updateACartProduct = () => {
+    dispatch(updateCartProduct());
+    setTimeout(() => {
+      dispatch(getUserCart())
+    },300)
+  }
 
   return (
     <>
@@ -71,6 +79,7 @@ const Cart = () => {
                           max={10}
                           id=""
                           value={item?.quantity}
+                          onChange={(e)=>setQuantity(e.target.value)}
                         />
                       </div>
                       <div>
