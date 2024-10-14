@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { authService } from "./userService";
 import { toast } from "react-toastify";
 
+
 export const registerUser = createAsyncThunk(
   "auth/register",
   async (userData, thunkAPI) => {
@@ -12,6 +13,7 @@ export const registerUser = createAsyncThunk(
     }
   }
 );
+
 
 export const loginUser = createAsyncThunk(
   "auth/login",
@@ -24,6 +26,7 @@ export const loginUser = createAsyncThunk(
   }
 );
 
+
 export const getUserProductWishlist = createAsyncThunk(
   "user/wishlist",
   async (thunkAPI) => {
@@ -34,6 +37,7 @@ export const getUserProductWishlist = createAsyncThunk(
     }
   }
 );
+
 
 export const addProdToCart = createAsyncThunk(
   "user/cart/add",
@@ -67,6 +71,18 @@ export const deleteCartProduct = createAsyncThunk(
     }
   }
 );
+
+
+export const updateCartProduct = createAsyncThunk(
+  "user/cart/product/update",
+  async (cartDetails, thunkAPI) => {
+    try {
+      return await authService.updateProductFromCart(cartDetails);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+)
 
 const getCustomerFromLocalStorage = localStorage.getItem("customer")
   ? JSON.parse(localStorage.getItem("customer"))
