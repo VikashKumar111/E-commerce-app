@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { authService } from "./userService";
 import { toast } from "react-toastify";
 
-
 export const registerUser = createAsyncThunk(
   "auth/register",
   async (userData, thunkAPI) => {
@@ -13,7 +12,6 @@ export const registerUser = createAsyncThunk(
     }
   }
 );
-
 
 export const loginUser = createAsyncThunk(
   "auth/login",
@@ -26,7 +24,6 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-
 export const getUserProductWishlist = createAsyncThunk(
   "user/wishlist",
   async (thunkAPI) => {
@@ -37,7 +34,6 @@ export const getUserProductWishlist = createAsyncThunk(
     }
   }
 );
-
 
 export const addProdToCart = createAsyncThunk(
   "user/cart/add",
@@ -71,7 +67,6 @@ export const deleteCartProduct = createAsyncThunk(
     }
   }
 );
-
 
 export const updateCartProduct = createAsyncThunk(
   "user/cart/product/update",
@@ -210,7 +205,7 @@ export const authSlice = createSlice({
         state.isError = true;
         state.isSuccess = false;
         state.message = action.error;
-        if (state.isSuccess===false) {
+        if (state.isSuccess === false) {
           toast.error("Something Went Wrong!");
         }
       })
@@ -221,13 +216,19 @@ export const authSlice = createSlice({
         state.isLoading = false;
         state.isError = false;
         state.isSuccess = true;
-        state.updatedCart = action.payload;
+        state.updatedCartProduct = action.payload;
+        if (state.isSuccess) {
+          toast.success("Product Updated From Cart Successfully!");
+        }
       })
       .addCase(updateCartProduct.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.isSuccess = false;
         state.message = action.error;
+        if (state.isSuccess === false) {
+          toast.error("Something Went Wrong!");
+        }
       });
   },
 });
