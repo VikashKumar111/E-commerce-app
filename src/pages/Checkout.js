@@ -4,6 +4,18 @@ import { Link } from "react-router-dom";
 import watch from "../images/watch.jpg";
 import Container from "../components/Container";
 import { useDispatch, useSelector } from "react-redux";
+import { useFormik } from "formik";
+import * as yup from "yup";
+
+const shippingSchema = yup.object({
+  firstName: yup.string().required("First Name is Required"),
+  lastName: yup.string().required("Last Name is Required"),
+  address: yup.string().required("Address Details Are Required"),
+  state: yup.string().required("State is Required"),
+  country: yup.string().required("Country is Required"),
+  pincode: yup.string().required("Pincode is Required"),
+});
+
 
 const Checkout = () => {
   const dispatch = useDispatch();
@@ -185,7 +197,9 @@ const Checkout = () => {
             </div>
             <div className="border-bottom py-4 d-flex justify-content-between align-items-center">
               <h4 className="total">Total</h4>
-              <h5 className="total-price">$ {totalAmount ? totalAmount + 5 : 0}</h5>
+              <h5 className="total-price">
+                $ {totalAmount ? totalAmount + 5 : 0}
+              </h5>
             </div>
           </div>
         </div>
