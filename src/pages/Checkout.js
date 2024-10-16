@@ -12,9 +12,11 @@ const shippingSchema = yup.object({
   lastName: yup.string().required("Last Name is Required"),
   address: yup.string().required("Address Details Are Required"),
   state: yup.string().required("State is Required"),
+  city: yup.string().required("City is Required"),
   country: yup.string().required("Country is Required"),
   pincode: yup.string().required("Pincode is Required"),
 });
+
 
 
 const Checkout = () => {
@@ -30,6 +32,22 @@ const Checkout = () => {
       setTotalAmount(sum);
     }
   }, [cartState]);
+
+  const formik = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      address: "",
+      state: "",
+      city: "",
+      country:"",
+      pincode:"",
+    },
+    validationSchema: shippingSchema,
+    onSubmit: (values) => {
+      
+    }
+})
 
   return (
     <>
