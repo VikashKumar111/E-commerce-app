@@ -17,8 +17,6 @@ const shippingSchema = yup.object({
   pincode: yup.string().required("Pincode is Required"),
 });
 
-
-
 const Checkout = () => {
   const dispatch = useDispatch();
   const cartState = useSelector((state) => state.auth.cartProducts);
@@ -40,14 +38,15 @@ const Checkout = () => {
       address: "",
       state: "",
       city: "",
-      country:"",
-      pincode:"",
+      country: "",
+      pincode: "",
+      other: "",
     },
     validationSchema: shippingSchema,
     onSubmit: (values) => {
-      
-    }
-})
+      alert(values);
+    },
+  });
 
   return (
     <>
@@ -90,42 +89,79 @@ const Checkout = () => {
               <p className="user-details total">vkvk(vkghfh@gmail.com)</p>
               <h4 className="mb-3">Shipping Address</h4>
               <form
+                onSubmit={formik.handleSubmit}
                 action=""
                 className="d-flex gap-15 flex-wrap justify-content-between"
               >
                 <div className="w-100">
-                  <select name="" className="form-control form-select" id="">
+                  <select
+                    name="country"
+                    value={formik.values.country}
+                    onChange={formik.handleChange("country")}
+                    onBlur={formik.handleBlur("country")}
+                    className="form-control form-select"
+                    id=""
+                  >
                     <option value="" selected disabled>
                       Select Country
                     </option>
+                    <option value="India">India</option>
                   </select>
+                  <div className="error ms-2 my-1">
+                    {formik.touched.country && formik.errors.country}
+                  </div>
                 </div>
                 <div className="flex-grow-1">
                   <input
                     type="text"
                     placeholder="First name"
                     className="form-control"
+                    name="firstName"
+                    value={formik.values.firstName}
+                    onChange={formik.handleChange("firstName")}
+                    onBlur={formik.handleBlur("firstName")}
                   />
+                  <div className="error ms-2 my-1">
+                    {formik.touched.firstName && formik.errors.firstName}
+                  </div>
                 </div>
                 <div className="flex-grow-1">
                   <input
                     type="text"
                     placeholder="Last Name"
                     className="form-control"
+                    name="lastName"
+                    value={formik.values.lastName}
+                    onChange={formik.handleChange("lastName")}
+                    onBlur={formik.handleBlur("lastName")}
                   />
+                  <div className="error ms-2 my-1">
+                    {formik.touched.lastName && formik.errors.lastName}
+                  </div>
                 </div>
                 <div className="w-100">
                   <input
                     type="text"
                     placeholder="Address"
                     className="form-control"
+                    name="address"
+                    value={formik.values.address}
+                    onChange={formik.handleChange("address")}
+                    onBlur={formik.handleBlur("address")}
                   />
+                  <div className="error ms-2 my-1">
+                    {formik.touched.address && formik.errors.address}
+                  </div>
                 </div>
                 <div className="w-100">
                   <input
                     type="text"
                     placeholder="Apartment, Suite , etc "
                     className="form-control"
+                    name="other"
+                    value={formik.values.other}
+                    onChange={formik.handleChange("other")}
+                    onBlur={formik.handleBlur("other")}
                   />
                 </div>
                 <div className="flex-grow-1">
@@ -133,21 +169,48 @@ const Checkout = () => {
                     type="text"
                     placeholder="City"
                     className="form-control"
+                    name="city"
+                    value={formik.values.city}
+                    onChange={formik.handleChange("city")}
+                    onBlur={formik.handleBlur("city")}
                   />
+                  <div className="error ms-2 my-1">
+                    {formik.touched.city && formik.errors.city}
+                  </div>
                 </div>
                 <div className="flex-grow-1">
-                  <select name="" className="form-control form-select" id="">
+                  <select
+                    name="state"
+                    value={formik.values.state}
+                    onChange={formik.handleChange("state")}
+                    onBlur={formik.handleBlur("state")}
+                    className="form-control form-select"
+                    id=""
+                  >
                     <option value="" selected disabled>
                       Select State
                     </option>
+                     <option value="Haryana">
+                      Haryana
+                    </option>
                   </select>
+                   <div className="error ms-2 my-1">
+                    {formik.touched.state && formik.errors.state}
+                  </div>
                 </div>
                 <div className="flex-grow-1">
                   <input
                     type="text"
                     placeholder="Zipcode"
                     className="form-control"
+                    name="pincode"
+                    value={formik.values.pincode}
+                    onChange={formik.handleChange("pincode")}
+                    onBlur={formik.handleBlur("pincode")}
                   />
+                  <div className="error ms-2 my-1">
+                    {formik.touched.pincode && formik.errors.pincode}
+                  </div>
                 </div>
                 <div className="w-100">
                   <div className="d-flex justify-content-between align-items-center">
