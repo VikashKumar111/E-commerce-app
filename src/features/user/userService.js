@@ -137,7 +137,7 @@ const updateProductFromCart = async (cartDetail) => {
   // Log the config object to see what it's passing in the request
   console.log("Config object:", config);
 
-  const response = await axios.put(
+  const response = await axios.delete(
     `${base_url}user/update-product-cart/${cartDetail.cartItemId}/${cartDetail.quantity}`
   );
   if (response.data) {
