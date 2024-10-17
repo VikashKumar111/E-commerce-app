@@ -21,6 +21,7 @@ const Checkout = () => {
   const dispatch = useDispatch();
   const cartState = useSelector((state) => state.auth.cartProducts);
   const [totalAmount, setTotalAmount] = useState(null);
+  const [shippingInfo, setShippingInfo] = useState(null);
   console.log(cartState);
 
   useEffect(() => {
@@ -44,7 +45,8 @@ const Checkout = () => {
     },
     validationSchema: shippingSchema,
     onSubmit: (values) => {
-      alert(values);
+      // alert(JSON.stringify(values));
+      setShippingInfo(values);
     },
   });
 
@@ -220,6 +222,7 @@ const Checkout = () => {
                     <Link to="/cart" className="button">
                       Continue to Shipping
                     </Link>
+                    <button className="button" type="submit">Place Order</button>
                   </div>
                 </div>
               </form>
