@@ -105,17 +105,17 @@ const Checkout = () => {
                     razorpaySignature: response.razorpay_signature,
                 };
 
-                const result = await axios.post("http://localhost:5000/payment/success", data);
+                const result = await axios.post("http://localhost:5000/api/user/order/paymentVerification", data);
 
-                alert(result.data.msg);
+                alert(result);
             },
             prefill: {
-                name: "Soumya Dey",
-                email: "SoumyaDey@example.com",
+                name: "Vkvkvk",
+                email: "vkvkvkvk@example.com",
                 contact: "9999999999",
             },
             notes: {
-                address: "Soumya Dey Corporate Office",
+                address: "VK's Corporate Office",
             },
             theme: {
                 color: "#61dafb",
