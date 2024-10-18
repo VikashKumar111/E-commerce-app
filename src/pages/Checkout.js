@@ -47,84 +47,106 @@ const Checkout = () => {
     validationSchema: shippingSchema,
     onSubmit: (values) => {
       // alert(JSON.stringify(values));
-      setShippingInfo(values);
+      // setShippingInfo(values);
+      // alert("ghgfff");
+      checkOutHandler();
     },
   });
- 
-  const loadScript =(src)=> {
-        return new Promise((resolve) => {
-          // const script = document.createElement("script");
-          const script = document.createElement("root");
-            script.src = src;
-            script.onload = () => {
-                resolve(true);
-            };
-            script.onerror = () => {
-                resolve(false);
-            };
-            document.body.appendChild(script);
-        });
-  }
-  
 
+  const loadScript = (src) => {
+    return new Promise((resolve) => {
+      // const script = document.createElement("script");
+      const script = document.createElement("script");
+      script.src = src;
+      script.onload = () => {
+        resolve(true);
+      };
+      script.onerror = () => {
+        resolve(false);
+      };
+      document.body.appendChild(script);
+    });
+  };
 
-  const  checkOutHandler =async()=> {
-        const res = await loadScript(
-            "https://checkout.razorpay.com/v1/checkout.js"
-        );
+  const checkOutHandler = async () => {
+    // alert("ghgfff");
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
 
-        if (!res) {
-            alert("Razorpay SDK failed to load. Are you online?");
-            return;
-        }
+    if (!res) {
+      alert("Razorpay SDK failed to load. Are you online?");
+      return;
+    }
 
-        // creating a new order
-        const result = await axios.post("http://localhost:5000/api/user/order/checkout");
+    // Retrieve the token from localStorage
+    const token = localStorage.getItem("Token");
 
-        if (!result) {
-            alert("Server error. Are you online?");
-            return;
-        }
+    console.log("Token retrieved from localStorage:", token);
 
-        // Getting the order details back
-        const { amount, id: order_id, currency } = result.data;
+    // If the token exists, include it in the headers
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    };
 
-        const options = {
-            key: "rzp_test_r6FiJfddJh76SI", // Enter the Key ID generated from the Dashboard
-            amount: amount.toString(),
-            currency: currency,
-            name: "Soumya Corp.",
-            description: "Test Transaction",
-            image: { logo },
-            order_id: order_id,
-            handler: async function (response) {
-                const data = {
-                    orderCreationId: order_id,
-                    razorpayPaymentId: response.razorpay_payment_id,
-                    razorpayOrderId: response.razorpay_order_id,
-                    razorpaySignature: response.razorpay_signature,
-                };
+    // Log the config object to see what it's passing in the request
+    console.log("Config object:", config);
 
-                const result = await axios.post("http://localhost:5000/api/user/order/paymentVerification", data);
+    // creating a new order
+    const result = await axios.post(
+      "http://localhost:5000/api/user/order/checkout","",
+      config
+    );
 
-                alert(result);
-            },
-            prefill: {
-                name: "Vkvkvk",
-                email: "vkvkvkvk@example.com",
-                contact: "9999999999",
-            },
-            notes: {
-                address: "VK's Corporate Office",
-            },
-            theme: {
-                color: "#61dafb",
-            },
+    if (!result) {
+      alert("Server error. Are you online?");
+      return;
+    }
+
+    // Getting the order details back
+    const { amount, id: order_id, currency } = result.data;
+
+    const options = {
+      key: "rzp_test_r6FiJfddJh76SI", // Enter the Key ID generated from the Dashboard
+      amount: amount.toString(),
+      currency: currency,
+      name: "Vkvkvk",
+      description: "Test Transaction",
+      order_id: order_id,
+      handler: async function (response) {
+        const data = {
+          orderCreationId: order_id,
+          razorpayPaymentId: response.razorpay_payment_id,
+          razorpayOrderId: response.razorpay_order_id,
+          razorpaySignature: response.razorpay_signature,
         };
 
-        const paymentObject = new window.Razorpay(options);
-        paymentObject.open();
-}
+        const result = await axios.post(
+          "http://localhost:5000/api/user/order/paymentVerification",
+          data
+        );
+
+        alert(result);
+      },
+      prefill: {
+        name: "Vkvkvk",
+        email: "vkvkvkvk@example.com",
+        contact: "9999999999",
+      },
+      notes: {
+        address: "VK's Corporate Office",
+      },
+      theme: {
+        color: "#61dafb",
+      },
+    };
+
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  };
   return (
     <>
       <Container class1="checkout-wrapper py-5 home-wrapper-2">
@@ -267,11 +289,9 @@ const Checkout = () => {
                     <option value="" selected disabled>
                       Select State
                     </option>
-                     <option value="Haryana">
-                      Haryana
-                    </option>
+                    <option value="Haryana">Haryana</option>
                   </select>
-                   <div className="error ms-2 my-1">
+                  <div className="error ms-2 my-1">
                     {formik.touched.state && formik.errors.state}
                   </div>
                 </div>
@@ -297,7 +317,9 @@ const Checkout = () => {
                     <Link to="/cart" className="button">
                       Continue to Shipping
                     </Link>
-                    <button className="button" type="submit">Place Order</button>
+                    <button className="button" type="submit">
+                      Place Order
+                    </button>
                   </div>
                 </div>
               </form>
