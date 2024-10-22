@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import axios from "axios";
+import { createAnOrder } from "../features/user/userSlice";
 
 const shippingSchema = yup.object({
   firstName: yup.string().required("First Name is Required"),
@@ -23,6 +24,7 @@ const Checkout = () => {
   const cartState = useSelector((state) => state.auth.cartProducts);
   const [totalAmount, setTotalAmount] = useState(null);
   const [shippingInfo, setShippingInfo] = useState(null);
+  const [cartProductState, setCartProductState] = useState([]);
   console.log(cartState);
 
   useEffect(() => {
@@ -68,6 +70,15 @@ const Checkout = () => {
     });
   };
 
+
+  useEffect(() => {
+    let items =[]
+    for (let index = 0; index < cartState?.length; index++){
+      items.push({ product: cartState[index].productId._id, quantity:cartState[index].quantity,color:cartState[index].color._id,price:cartState[index].price})
+        }
+  },[])
+
+
   const checkOutHandler = async () => {
     // alert("ghgfff");
     const res = await loadScript(
@@ -106,6 +117,11 @@ const Checkout = () => {
       return;
     }
 
+
+
+
+
+
     // Getting the order details back
     const { amount, id: order_id, currency } = result.data;
 
@@ -128,8 +144,14 @@ const Checkout = () => {
           "http://localhost:5000/api/user/order/paymentVerification",
           data
         );
+        
+        let item = []
+        for (let index = 0; index < cartState.length; index++){
+          console.log(item)
+        }
 
-        alert(result);
+        // alert(result);
+        dispatch(createAnOrder({totalPrice:totalAmount,totalPriceAfterDiscount:totalAmount,orderItems:[],paymentInfo,shippingInfo}))
       },
       prefill: {
         name: "Vkvkvk",
