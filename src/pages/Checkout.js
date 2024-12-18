@@ -145,10 +145,10 @@ const Checkout = () => {
           data
         );
         
-        let item = []
-        for (let index = 0; index < cartState.length; index++){
-          console.log(item)
-        }
+        // let item = []
+        // for (let index = 0; index < cartState.length; index++){
+        //   console.log(item)
+        // }
 
         // alert(result);
         dispatch(createAnOrder({totalPrice:totalAmount,totalPriceAfterDiscount:totalAmount,orderItems:[],paymentInfo,shippingInfo}))
